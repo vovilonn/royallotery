@@ -213,6 +213,59 @@ body {
     background: rgba(43, 43, 43, 0.4);
     border-radius: 54px;
     margin: 0 24px 0 123px;
+    max-width: 95px;
+    position: relative;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.languages__item {
+    padding: 16px 18px;
+}
+
+.languages__item svg {
+    width: 24px;
+    height: 18px;
+    pointer-events: none;
+}
+
+.languages__sub {
+    opacity: 0;
+    pointer-events: none;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    position: absolute;
+    background: rgba(43, 43, 43, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 0 0 10px 10px;
+    transition: var(--transition);
+    transition-delay: 0s;
+}
+
+.languages__item a, .languages__item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 90%;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.languages__sub li:not(:last-child) {
+    /*margin-bottom: 15px;*/
+}
+
+.languages.is-open {
+    border-radius: 10px 10px 0 0;
+}
+
+.languages.is-open .languages__sub {
+    opacity: 1;
+    pointer-events: initial;
+    transition-delay: .3s;
 }
 
 /* \Header */

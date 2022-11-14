@@ -38,3 +38,21 @@ if (Leaderboard) {
         },
     });
 }
+
+// DropDown
+
+const languages = document.querySelector('.languages')
+
+if (languages) {
+    languages.addEventListener('click', () => {
+        languages.classList.toggle('is-open')
+    })
+
+    document.addEventListener('click', (e) => {
+
+        if (e.target !== document.querySelector('.languages__item')) {
+            languages.classList.remove('is-open')
+        }
+
+    })
+}
