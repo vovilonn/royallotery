@@ -30,7 +30,7 @@ const countdown = setInterval(() => {
 const Leaderboard = document.querySelector('.leaderboard-slider')
 
 if (Leaderboard) {
-    const LeaderboardSwiper = new Swiper(Leaderboard, {
+    new Swiper(Leaderboard, {
         spaceBetween: 72,
         slidesPerView: 2,
         pagination: {
@@ -89,20 +89,26 @@ improvementBtn.forEach(btn => {
     btn.addEventListener('click', () => {
         parent.querySelector('.tickets__range').classList.add('is-active')
     })
+})
 
-    document.addEventListener('click', (e) => {
-        rangeWrapper.forEach(el => {
-            let target = e.target;
-            let its_menu = target === el || el.classList.contains(target);
-            let its_hamburger = target === btn;
-            let menu_is_active = el.classList.contains('is-active');
+document.addEventListener('click', (e) => {
+    const
+        target = e.target,
+        targetParent = target.parentElement;
 
-            if (!its_menu && !its_hamburger && menu_is_active) {
-                el.classList.remove('is-active')
-            }
-        })
-    })
+    if (
+        target.classList.contains('improvement-btn') ||
+        target.classList.contains('tickets__range') ||
+        targetParent.classList.contains('tickets__range')
+    ) {
+        const thisWindow = targetParent.querySelector('.tickets__range');
 
+        rangeWrapper.forEach(window => {
+            if (window !== thisWindow) window.classList.remove('is-active');
+        });
+    } else {
+        rangeWrapper.forEach(window => window.classList.remove('is-active'));
+    }
 })
 
 rangeWrapper.forEach(el => {
