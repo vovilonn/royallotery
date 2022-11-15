@@ -31,10 +31,19 @@ const Leaderboard = document.querySelector('.leaderboard-slider')
 
 if (Leaderboard) {
     new Swiper(Leaderboard, {
-        spaceBetween: 72,
-        slidesPerView: 2,
+        spaceBetween: 100,
+        slidesPerView: 1,
         pagination: {
             el: '.leaderboard-pagination',
+        },
+        breakpoints: {
+            971: {
+                slidesPerView: 2,
+                spaceBetween: 25,
+            },
+            1071: {
+                spaceBetween: 72,
+            },
         },
     });
 }
@@ -60,10 +69,11 @@ if (languages) {
 // Copy referral link
 
 const
-    copyLinkBtn = document.querySelector('.copy-ref-btn'),
-    copyText = document.querySelector('.ref-link__value').value
+    copyLinkBtn = document.querySelector('.copy-ref-btn')
 
 const copyContent = async () => {
+    const copyText = document.querySelector('.ref-link__value').value
+
     try {
         await navigator.clipboard.writeText(copyText);
         copyLinkBtn.innerHTML = 'Link copied'
@@ -84,7 +94,7 @@ const
     improvementBtn = document.querySelectorAll('.improvement-btn');
 
 improvementBtn.forEach(btn => {
-    const parent = btn.parentNode;
+    const parent = btn.parentNode
 
     btn.addEventListener('click', () => {
         parent.querySelector('.tickets__range').classList.add('is-active')
@@ -101,13 +111,13 @@ document.addEventListener('click', (e) => {
         target.classList.contains('tickets__range') ||
         targetParent.classList.contains('tickets__range')
     ) {
-        const thisWindow = targetParent.querySelector('.tickets__range');
+        const thisWindow = targetParent.querySelector('.tickets__range')
 
         rangeWrapper.forEach(window => {
-            if (window !== thisWindow) window.classList.remove('is-active');
-        });
+            if (window !== thisWindow) window.classList.remove('is-active')
+        })
     } else {
-        rangeWrapper.forEach(window => window.classList.remove('is-active'));
+        rangeWrapper.forEach(window => window.classList.remove('is-active'))
     }
 })
 
@@ -140,14 +150,41 @@ rangeWrapper.forEach(el => {
             `linear-gradient(to right, #A289FC 0%, #A289FC ${value * 2}%, transparent ${value * 2}%, transparent 100%)`
     }
 
-    init(range.value);
+    init(range.value)
 
     range.addEventListener('input', () => {
-        updateVar(range.value);
-        updateValue(range.value);
+        updateVar(range.value)
+        updateValue(range.value)
     });
 
 })
 
+// Accordion
 
+const accordions = document.querySelectorAll('.faq__item');
 
+const openAccordion = (accordion) => {
+    const content = accordion.querySelector('.faq__body');
+    accordion.classList.add('is-open');
+    content.style.maxHeight = content.scrollHeight + 34 + 'px';
+};
+
+const closeAccordion = (accordion) => {
+    const content = accordion.querySelector('.faq__body');
+    accordion.classList.remove('is-open');
+    content.style.maxHeight = null;
+};
+
+accordions.forEach((accordion) => {
+    const intro = accordion.querySelector('.faq__head');
+    const content = accordion.querySelector('.faq__body');
+
+    intro.onclick = () => {
+        if (content.style.maxHeight) {
+            closeAccordion(accordion);
+        } else {
+            accordions.forEach((accordion) => closeAccordion(accordion));
+            openAccordion(accordion);
+        }
+    };
+});

@@ -634,6 +634,7 @@ body {
     font-size: 16px;
     line-height: 90%;
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .leaderboard__id span {
@@ -672,11 +673,32 @@ body {
     margin-left: auto;
     white-space: nowrap;
 }
+
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    opacity: 1;
+}
+
+.leaderboard-pagination {
+    margin: 24px auto 0;
+    text-align: center;
+}
+
+.swiper-pagination-bullet-active {
+    background: #D0E25A;
+}
 /* \Leaderboard */
 
 /* Tickets */
 .tickets {
     padding-top: 140px;
+}
+
+.show-more-btn {
+    display: none !important;
+    margin: 24px auto 0 !important;
 }
 
 .tickets__intro {
@@ -1147,14 +1169,87 @@ input[type=range]::-webkit-slider-thumb {
 }
 /* \Referral Link */
 
-/* Footer */
-.footer {
-
+.faq {
+    padding: 140px 0 184px;
 }
+
+.faq__list {
+    max-width: 1062px;
+    width: 100%;
+    margin: 44px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.faq__head {
+    background: linear-gradient(180deg, rgba(51, 44, 137, 0.6) 0%, rgba(37, 32, 108, 0.6) 100%);
+    backdrop-filter: blur(12px);
+    border-radius: 14px;
+    padding: 20px 24px;
+    font-size: 24px;
+    line-height: 90%;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    user-select: none;
+    position: relative;
+}
+
+.faq__body {
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.03em;
+    padding-left: 24px;
+    padding-top: 0;
+    padding-bottom: 0;
+    pointer-events: none;
+    opacity: 0;
+    max-height: 0;
+    will-change: max-height;
+    transition: var(--transition);
+}
+
+.faq__item.is-open .faq__body {
+    opacity: 1;
+    pointer-events: initial;
+    padding-top: 24px;
+    padding-bottom: 10px;
+}
+
+.faq__head svg {
+    transition: var(--transition);
+}
+
+.faq__item.is-open .faq__head svg {
+    opacity: 0;
+}
+
+.faq__head::after {
+    content: url("data:image/svg+xml,%3Csvg width='16' height='9' viewBox='0 0 16 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 7C9 6.44772 8.55228 6 8 6C7.44772 6 7 6.44772 7 7L9 7ZM7.29289 8.70711C7.68342 9.09763 8.31658 9.09763 8.70711 8.70711L15.0711 2.34315C15.4616 1.95262 15.4616 1.31946 15.0711 0.928932C14.6805 0.538408 14.0474 0.538408 13.6569 0.928932L8 6.58579L2.34315 0.928932C1.95262 0.538408 1.31946 0.538408 0.928932 0.928932C0.538408 1.31946 0.538408 1.95262 0.928932 2.34315L7.29289 8.70711ZM7 7L7 8L9 8L9 7L7 7Z' fill='white'/%3E%3C/svg%3E");
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 24px;
+    line-height: 2px;
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+.faq__item.is-open .faq__head::after {
+    opacity: 1;
+    transition: opacity .7s;
+}
+
+/* Footer */
 
 .footer > .container {
     position: relative;
     padding-bottom: 124px;
+    z-index: 1;
 }
 
 .footer__title {
@@ -1191,11 +1286,418 @@ input[type=range]::-webkit-slider-thumb {
     position: absolute;
     right: 0;
     bottom: 0;
+    z-index: -1;
 }
 
 .footer__img img {
     width: 634px;
     height: 477px;
     display: block;
+
 }
 /* \Footer */
+
+/* Adaptive */
+@media (max-width: 1200px) {
+    .buy-ticket__img {
+        width: 450px;
+        height: 317px;
+    }
+}
+
+@media (max-width: 1070px) {
+    .tickets__wrapper, .leaderboard-slider {
+        padding: 44px;
+    }
+}
+
+@media (max-width: 992px) {
+    .title {
+        font-size: 50px;
+    }
+
+    .faq__head, .tickets__desc {
+        font-size: 20px;
+    }
+
+    .faq__body {
+        font-size: 14px;
+    }
+
+    .tickets__left {
+        max-width: 450px;
+    }
+
+    .tickets__timer p {
+        font-size: 25px;
+    }
+
+    .countdown {
+        font-size: 24px;
+        gap: 8px;
+    }
+
+    .footer__img img {
+        width: 500px;
+        height: 376px;
+    }
+
+    .intro__title {
+        font-size: 70px;
+    }
+
+    .buy-ticket__desc {
+        font-size: 20px;
+    }
+
+    .leaderboard-slider {
+        overflow: hidden;
+    }
+
+}
+
+@media (max-width: 830px) {
+    .buy-ticket__img {
+        width: 350px;
+        height: 247px;
+    }
+}
+
+@media (max-width: 768px) {
+    .btn {
+        min-width: 260px;
+        max-width: 260px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .tickets__intro {
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .tickets__left {
+        max-width: initial;
+    }
+
+    .tickets__right {
+        text-align: center;
+        width: 100%;
+    }
+
+    .tickets__timer p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tickets__timer .countdown {
+        justify-content: center;
+    }
+
+    .tickets__id p {
+        font-size: 14px;
+    }
+
+    .tickets__id p:nth-child(1), .tickets__id span, .tickets__info span {
+        font-size: 20px;
+    }
+
+    .tickets__wrapper {
+        padding: 30px 20px;
+    }
+
+    .tickets__list {
+        max-height: initial;
+        padding-right: 0;
+        overflow: unset;
+    }
+
+    .tickets__item:nth-child(n+6) {
+        display: none;
+    }
+
+    .tickets__btn {
+        display: none;
+    }
+
+    .tickets__wrapper {
+        padding: 34px 9px 24px;
+    }
+
+    .show-more-btn {
+        display: block !important;
+    }
+
+    .ref-link__wrapper {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .ref-link__value {
+        text-align: center;
+    }
+
+    .footer__img img {
+        width: 350px;
+        height: 263px;
+    }
+
+    .jackpot__title img {
+        width: 300px;
+    }
+
+    .timer.big .countdown {
+        font-size: 35px;
+    }
+
+    .jackpot__sum {
+        font-size: 70px;
+    }
+
+    .jackpot__total {
+        font-size: 20px;
+    }
+
+    .jackpot__total span {
+        font-size: 55px;
+    }
+
+    .buy-ticket__img{
+        width: 239px;
+        height: 174px;
+    }
+
+    .buy-ticket__desc {
+        font-size: 18px;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .tickets__info {
+        display: none;
+    }
+
+    .tickets__item {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .tickets__id {
+        width: 100%;
+        margin: 0 25px 34px;
+    }
+
+    .ref-received__wrapper {
+        flex-direction: column;
+    }
+
+    .ref-received__block:nth-child(1) {
+        min-width: initial;
+        min-height: initial;
+        width: 100%;
+        border-radius: 4px;
+        border: none;
+    }
+
+    .ref-received__left {
+        width: 100%;
+        border-radius: 4px;
+    }
+
+    .ref-received__right {
+        text-align: left;
+        padding: 24px;
+    }
+
+    .footer__img img {
+        margin: 0 auto;
+        width: 209px;
+        height: 157px;
+    }
+
+    .jackpot__title img {
+        width: 239px;
+    }
+
+    .jackpot__desc {
+        font-size: 14px;
+        max-width: 325px;
+        margin: 0 auto;
+    }
+
+    .timer.big .countdown {
+        font-size: 30px;
+    }
+
+    .jackpot__timer {
+        width: 303px;
+        height: 78px;
+    }
+
+    .jackpot__sum {
+        font-size: 48px;
+        margin-bottom: 14px;
+    }
+
+    .jackpot__total {
+        font-size: 14px;
+    }
+
+    .jackpot__total span {
+        font-size: 32px;
+    }
+
+    .jackpot__content {
+        padding: 63px 0 34px;
+    }
+
+    .buy-ticket {
+        padding: 0 0 64px;
+    }
+
+    .buy-ticket > .container {
+        flex-direction: column-reverse;
+        gap: 34px;
+    }
+
+    .buy-ticket__content {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .leaderboard-slider {
+        padding: 44px 24px;
+    }
+
+    .leaderboard__item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .leaderboard__bnb {
+        margin-left: 0;
+    }
+
+    .leaderboard__id {
+        font-size: 20px;
+    }
+
+    .leaderboard__btn {
+        margin: 24px auto 0;
+    }
+
+    .leaderboard {
+        padding-bottom: 64px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 32px;
+    }
+
+    .faq__list {
+        margin-top: 14px;
+    }
+
+    .faq {
+        padding: 104px 0 64px;
+    }
+
+    .faq__head {
+        padding: 17px 14px;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    .footer > .container {
+        padding-bottom: 69px;
+    }
+
+    .footer__desc {
+        font-size: 14px;
+        max-width: 240px;
+    }
+
+    .footer__socials {
+        margin-top: 29px;
+    }
+
+    .socials__item svg {
+        max-width: 36px;
+        height: 100%;
+    }
+
+    .btn-back, .tickets__desc {
+        font-size: 14px;
+    }
+
+    .mh {
+        display: none;
+    }
+
+    .tickets {
+        padding-top: 104px;
+    }
+
+    .tickets__timer p {
+        font-size: 20px;
+        max-width: 230px;
+    }
+
+    .ref-link {
+        padding: 64px 0;
+    }
+
+    .ref-link__value {
+        font-size: 16px;
+    }
+
+    .ref-link__wrapper {
+        padding: 24px;
+        margin: 24px 0;
+    }
+
+    .ref-received__left {
+        padding: 14px 24px;
+    }
+
+    .ref-received__right {
+        font-size: 14px;
+    }
+
+    .ref-received__right span {
+        font-size: 24px;
+        margin-bottom: 14px;
+    }
+
+    .ref-received__right p {
+        font-size: 10px;
+    }
+
+    .footer__img {
+        height: 88px;
+        position: relative;
+    }
+
+    .jackpot {
+        padding: 34px 0 64px;
+    }
+
+    .btn {
+        max-width: 325px;
+        min-width: 325px;
+        height: 52px;
+    }
+}
+
+@media (max-width: 350px) {
+    .btn {
+        max-width: initial;
+        min-width: initial;
+        width: 100%;
+    }
+}
+/* \Adaptive */
