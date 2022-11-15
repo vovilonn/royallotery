@@ -90,6 +90,19 @@ improvementBtn.forEach(btn => {
         parent.querySelector('.tickets__range').classList.add('is-active')
     })
 
+    document.addEventListener('click', (e) => {
+        rangeWrapper.forEach(el => {
+            let target = e.target;
+            let its_menu = target === el || el.classList.contains(target);
+            let its_hamburger = target === btn;
+            let menu_is_active = el.classList.contains('is-active');
+
+            if (!its_menu && !its_hamburger && menu_is_active) {
+                el.classList.remove('is-active')
+            }
+        })
+    })
+
 })
 
 rangeWrapper.forEach(el => {
