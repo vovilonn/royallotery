@@ -56,3 +56,79 @@ if (languages) {
 
     })
 }
+
+// Copy referral link
+
+const
+    copyLinkBtn = document.querySelector('.copy-ref-btn'),
+    copyText = document.querySelector('.ref-link__value').value
+
+const copyContent = async () => {
+    try {
+        await navigator.clipboard.writeText(copyText);
+        copyLinkBtn.innerHTML = 'Link copied'
+        copyLinkBtn.classList.add('copied')
+    } catch (err) {
+        console.error('Failed to copy: ', err);
+    }
+}
+
+if (copyLinkBtn) {
+    copyLinkBtn.addEventListener('click', copyContent)
+}
+
+// Range
+
+const
+    rangeWrapper = document.querySelectorAll('.tickets__range'),
+    improvementBtn = document.querySelectorAll('.improvement-btn');
+
+improvementBtn.forEach(btn => {
+    const parent = btn.parentNode;
+
+    btn.addEventListener('click', () => {
+        parent.querySelector('.tickets__range').classList.add('is-active')
+    })
+
+})
+
+rangeWrapper.forEach(el => {
+
+    let range = el.querySelector('.range'),
+        rangeValue = el.querySelector('.range-value'),
+        rangePos = 0;
+
+    let init = (value) => {
+        rangeValue.innerHTML = `${value}%`
+        rangeValue.style.width = `${rangePos} = ${value}%`
+    }
+
+    let updateValue = (value) => {
+        rangeValue.innerHTML = Math.floor(value) + '%';
+
+        if (value > 1) {
+            el.parentNode.querySelector('.improvement-btn').innerHTML = `+${value}% Improved Probability`
+            el.parentNode.querySelector('.improvement-btn').classList.add('is-active')
+        } else {
+            el.parentNode.querySelector('.improvement-btn').innerHTML = 'Apply improvement'
+            el.parentNode.querySelector('.improvement-btn').classList.remove('is-active')
+        }
+
+    }
+
+    let updateVar = (value) => {
+        el.querySelector('.tickets__range-line').style.background =
+            `linear-gradient(to right, #A289FC 0%, #A289FC ${value * 2}%, transparent ${value * 2}%, transparent 100%)`
+    }
+
+    init(range.value);
+
+    range.addEventListener('input', () => {
+        updateVar(range.value);
+        updateValue(range.value);
+    });
+
+})
+
+
+
