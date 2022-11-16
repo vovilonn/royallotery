@@ -181,6 +181,7 @@ body {
     gap: 14px;
     color: #fff;
     text-decoration: none;
+    white-space: nowrap;
     transition: var(--transition);
 }
 
