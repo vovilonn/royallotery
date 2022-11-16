@@ -42,6 +42,7 @@ if (Leaderboard) {
                 spaceBetween: 25,
             },
             1071: {
+                slidesPerView: 2,
                 spaceBetween: 72,
             },
         },

@@ -218,6 +218,7 @@ body {
     position: absolute;
     width: 100%;
     top: 24px;
+    z-index: 100;
 }
 
 .header > .container {
@@ -306,6 +307,17 @@ body {
     height: 100vh;
     min-height: 700px;
     padding-top: 90px;
+    position: relative;
+    overflow: hidden;
+}
+
+.intro__bg {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 90px);
+    background: url("../images/cubes_bg.png") no-repeat right bottom;
+    background-size: contain;
+    z-index: 1;
 }
 
 .intro > .container {
@@ -1309,6 +1321,10 @@ input[type=range]::-webkit-slider-thumb {
     .tickets__wrapper, .leaderboard-slider {
         padding: 44px;
     }
+
+    .languages {
+        margin: 0 24px;
+    }
 }
 
 @media (max-width: 992px) {
@@ -1352,6 +1368,17 @@ input[type=range]::-webkit-slider-thumb {
 
     .leaderboard-slider {
         overflow: hidden;
+    }
+
+    .wallet-btn {
+        min-width: 225px;
+        max-width: 225px;
+    }
+
+    .intro__bg {
+        top: -90px;
+        background: url(../images/cubes-mobile_bg.png) no-repeat top right;
+        background-size: contain;
     }
 
 }
@@ -1473,6 +1500,30 @@ input[type=range]::-webkit-slider-thumb {
 
 }
 
+@media (max-width: 685px) {
+    .header__link {
+        display: none;
+    }
+
+    .header__right {
+        width: 100%;
+        flex-direction: row-reverse;
+    }
+
+    .languages {
+        margin: 0;
+    }
+
+    .wallet-btn {
+        margin: 0 auto;
+    }
+
+    .logo {
+        width: 35px;
+        height: 46px;
+    }
+}
+
 @media (max-width: 576px) {
     .tickets__info {
         display: none;
@@ -1591,6 +1642,34 @@ input[type=range]::-webkit-slider-thumb {
         padding-bottom: 64px;
     }
 
+    .wallet-btn {
+        min-width: 190px;
+        max-width: 190px;
+    }
+
+    .intro__wrapper::before {
+        display: none;
+    }
+
+    .intro {
+        height: initial;
+        min-height: initial;
+        padding: 357px 0 34px;
+    }
+
+    .title.intro__title {
+        font-size: 48px;
+        max-width: 325px;
+    }
+
+    .intro__desc {
+        font-size: 24px;
+    }
+
+    .intro__wrapper .btn {
+        height: 52px;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -1691,6 +1770,41 @@ input[type=range]::-webkit-slider-thumb {
         min-width: 325px;
         height: 52px;
     }
+
+    .btn.wallet-btn {
+        min-width: 153px;
+        max-width: 153px;
+        width: 153px;
+        height: 24px;
+        font-size: 10px;
+    }
+
+    .languages__item span {
+        display: none;
+    }
+
+    .languages__item {
+        padding: 0;
+    }
+
+    .languages__sub {
+        margin: 3px 0 0;
+        padding: 3px 0 0;
+        background: transparent;
+    }
+
+    .languages__sub li:not(:last-child) {
+        padding: 5px 0 8px;
+    }
+
+    .languages__item svg {
+        width: 36px;
+        height: 27px;
+    }
+
+    .leaderboard-slider {
+        width: calc(100% + 30px);
+    }
 }
 
 @media (max-width: 350px) {
@@ -1698,6 +1812,18 @@ input[type=range]::-webkit-slider-thumb {
         max-width: initial;
         min-width: initial;
         width: 100%;
+    }
+
+    .intro__desc {
+        font-size: 20px;
+    }
+
+    .jackpot__timer {
+        width: 270px;
+    }
+
+    .jackpot__sum {
+        font-size: 39px;
     }
 }
 /* \Adaptive */
