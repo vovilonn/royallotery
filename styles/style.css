@@ -228,6 +228,11 @@ body {
     justify-content: space-between;
 }
 
+.logo__main {
+    width: 245px;
+    height: 63px;
+}
+
 .header__right {
     display: flex;
     align-items: center;
@@ -383,6 +388,11 @@ body {
 .jackpot__title {
     text-align: center;
     margin-bottom: 14px;
+}
+
+.jackpot__title img {
+    width: 453px;
+    height: 89px;
 }
 
 .jackpot__desc {
@@ -1384,6 +1394,14 @@ input[type=range]::-webkit-slider-thumb {
 
 }
 
+
+@media (max-width: 849px) {
+    .logo__main {
+        width: 50px;
+        height: 63px;
+    }
+}
+
 @media (max-width: 830px) {
     .buy-ticket__img {
         width: 350px;
@@ -1519,10 +1537,11 @@ input[type=range]::-webkit-slider-thumb {
         margin: 0 auto;
     }
 
-    .logo {
+    .logo__main {
         width: 35px;
         height: 46px;
     }
+
 }
 
 @media (max-width: 576px) {
