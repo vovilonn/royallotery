@@ -48,6 +48,18 @@ export const CONTRACT_ABI = [
     type: "function",
   },
   {
+    inputs: [
+      { internalType: "bytes32", name: "_hashedMessage", type: "bytes32" },
+      { internalType: "uint8", name: "_v", type: "uint8" },
+      { internalType: "bytes32", name: "_r", type: "bytes32" },
+      { internalType: "bytes32", name: "_s", type: "bytes32" },
+    ],
+    name: "VerifyMessage",
+    outputs: [{ internalType: "address", name: "", type: "address" }],
+    stateMutability: "pure",
+    type: "function",
+  },
+  {
     inputs: [{ internalType: "address", name: "_inviter", type: "address" }],
     name: "accountRegistration",
     outputs: [],
@@ -123,6 +135,13 @@ export const CONTRACT_ABI = [
     type: "function",
   },
   {
+    inputs: [{ internalType: "address", name: "_user", type: "address" }],
+    name: "checkRegistration",
+    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
     inputs: [{ internalType: "uint32", name: "_ID", type: "uint32" }],
     name: "checkWinners",
     outputs: [
@@ -140,27 +159,6 @@ export const CONTRACT_ABI = [
     name: "endLottery",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "bytes32", name: "_messageHash", type: "bytes32" },
-    ],
-    name: "getEthSignedMessageHash",
-    outputs: [{ internalType: "bytes32", name: "", type: "bytes32" }],
-    stateMutability: "pure",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "address", name: "_to", type: "address" },
-      { internalType: "uint256", name: "_amount", type: "uint256" },
-      { internalType: "string", name: "_message", type: "string" },
-      { internalType: "uint256", name: "_nonce", type: "uint256" },
-    ],
-    name: "getMessageHash",
-    outputs: [{ internalType: "bytes32", name: "", type: "bytes32" }],
-    stateMutability: "pure",
     type: "function",
   },
   {
@@ -182,20 +180,6 @@ export const CONTRACT_ABI = [
     name: "receiveWithdraw",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "bytes32",
-        name: "_ethSignedMessageHash",
-        type: "bytes32",
-      },
-      { internalType: "bytes", name: "_signature", type: "bytes" },
-    ],
-    name: "recoverSigner",
-    outputs: [{ internalType: "address", name: "", type: "address" }],
-    stateMutability: "pure",
     type: "function",
   },
   {
@@ -230,17 +214,6 @@ export const CONTRACT_ABI = [
     type: "function",
   },
   {
-    inputs: [{ internalType: "bytes", name: "sig", type: "bytes" }],
-    name: "splitSignature",
-    outputs: [
-      { internalType: "bytes32", name: "r", type: "bytes32" },
-      { internalType: "bytes32", name: "s", type: "bytes32" },
-      { internalType: "uint8", name: "v", type: "uint8" },
-    ],
-    stateMutability: "pure",
-    type: "function",
-  },
-  {
     inputs: [],
     name: "ticketPrice",
     outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
@@ -262,20 +235,6 @@ export const CONTRACT_ABI = [
       { internalType: "uint256", name: "balance", type: "uint256" },
       { internalType: "bool", name: "influencer", type: "bool" },
     ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "address", name: "_signer", type: "address" },
-      { internalType: "address", name: "_to", type: "address" },
-      { internalType: "uint256", name: "_amount", type: "uint256" },
-      { internalType: "string", name: "_message", type: "string" },
-      { internalType: "uint256", name: "_nonce", type: "uint256" },
-      { internalType: "bytes", name: "signature", type: "bytes" },
-    ],
-    name: "validateAuthSignature",
-    outputs: [{ internalType: "bool", name: "sign", type: "bool" }],
     stateMutability: "view",
     type: "function",
   },
