@@ -1,30 +1,145 @@
+/* eslint-disable no-return-assign */
+/* eslint-disable no-await-in-loop */
+
+
+import {CONFIG, jackpotAddress, rpcUrl} from "./config.js";
+
+const {ethers} = window;
+const {ethereum} = window;
+
+const customHttpProvider = new ethers.providers.JsonRpcProvider(rpcUrl);
+const readContract = new ethers.Contract(CONFIG.address, CONFIG.abi, customHttpProvider);
+
 // Timer
-const newDate = new Date("sep 12 23 23:59:59").getTime();
 
-const countdown = setInterval(() => {
-  const date = new Date().getTime();
-  const diff = newDate - date;
-  const days = Math.floor(
-    (diff % (1000 * 60 * 60 * 24 * (365.25 / 12))) / (1000 * 60 * 60 * 24),
-  );
-  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+const convertUrl = 'https://www.binance.com/api/v3/ticker/price?symbol=BNBUSDT';
+let newDate = new Date("sep 12 23 23:59:59").getTime();
 
-  document.querySelectorAll(".timer").forEach((timer) => {
-    timer.querySelector(".seconds").innerHTML =
-      seconds < 10 ? `0${seconds}` : seconds;
-    timer.querySelector(".minutes").innerHTML =
-      minutes < 10 ? `0${minutes}` : minutes;
-    timer.querySelector(".hours").innerHTML = hours < 10 ? `0${hours}` : hours;
-    timer.querySelector(".days").innerHTML = days < 10 ? `0${days}` : days;
-  });
 
-  if (diff === 0) {
-    clearInterval(countdown);
-    console.log("Event End");
+const leaderBoardItemTemplate = ({userId, amount}) => ` <li class="leaderboard__item">
+<div class="leaderboard__id">
+    ID <span>${userId}</span>
+
+</div>
+
+<div class="leaderboard__bnb">
+    ${amount} Bnb
+</div>
+</li>`
+const showWinners = async () => {
+  const lotteriesInfo = [];
+  let lotteryId = 1;
+  let emptyLotteriesAmount = 0;
+  let currentLottery = await readContract.checkWinners(lotteryId);;
+  do {
+    const currentLotteryInfo = await readContract.LotteryId(lotteryId);
+    if (currentLottery.win1[0]) {
+      lotteriesInfo.push({
+        userId: `${currentLottery.win1[0].slice(0, 3)}***${currentLottery.win1[0].slice(-3)}`,
+        amount: Math.round(+ethers.utils.formatEther(currentLotteryInfo.pot) / 10 * 1000) / 1000
+      })
+    }
+
+    lotteryId += 1;
+    currentLottery = await readContract.checkWinners(lotteryId);
+    if (!currentLottery.win1.length) {
+      emptyLotteriesAmount += 1;
+    }
+  } while (emptyLotteriesAmount < 2)
+
+  lotteriesInfo.sort((a, b) => b.amount - a.amount);
+  if (lotteriesInfo.length > 10) {
+    lotteriesInfo.length = 10;
   }
-}, 1000);
+  const leaderBoardLists = document.querySelectorAll('.leaderboard__list');
+  leaderBoardLists[0].innerHTML = '';
+  leaderBoardLists[1].innerHTML = '';
+  lotteriesInfo.slice(0, 5).forEach(info => leaderBoardLists[0].innerHTML += leaderBoardItemTemplate(info));
+  leaderBoardLists[1].innerHTML = '';
+  lotteriesInfo.slice(5).forEach(info => leaderBoardLists[1].innerHTML += leaderBoardItemTemplate(info));
+}
+
+const showLotteryInfo = async () => {
+  try {
+    const activeLottery = await readContract.checkActiveLottery();
+    const balance = await customHttpProvider.getBalance(jackpotAddress);
+
+    const jackPotSum = document.querySelector('.jackpot__sum');
+    if (jackPotSum) {
+      jackPotSum.innerHTML = `${(+ethers.utils.formatEther(balance)).toFixed(2)} BNB`;
+    }
+    let resWithConversionRate = await fetch(convertUrl);
+    resWithConversionRate = await resWithConversionRate.json();
+    const jackPotSumUsd = document.querySelector('.jackpot__total__usd');
+
+    if (jackPotSumUsd) {
+      jackPotSumUsd.innerHTML = `$${(resWithConversionRate.price * ethers.utils.formatEther(balance)).toFixed(2)}`;
+    }
+    const countdownEl = document.querySelector('.countdown-jackPot');
+
+    if (!activeLottery.length) {
+      if (countdownEl) {
+        countdownEl.setAttribute('data-i18n', 'main.youCanWin');
+        countdownEl.innerHTML = "";
+      }
+    }
+
+    if (activeLottery.length) {
+
+      const ticketRoundNumberEl = document.querySelector('.round-number');
+      if (ticketRoundNumberEl) {
+        ticketRoundNumberEl.textContent = activeLottery[0];
+      }
+      const currentLotery = await readContract.LotteryId(activeLottery[0]);
+      if (!currentLotery.jackPot) {
+        if (countdownEl) {
+          countdownEl.setAttribute('data-i18n', 'main.youCanWin');
+          countdownEl.innerHTML = "";
+        }
+      }
+
+      newDate = new Date(currentLotery.endTime * 1000).getTime();
+      const countdown = setInterval(() => {
+        const date = new Date().getTime();
+        const diff = newDate - date;
+        if (diff <= 1000) {
+          clearInterval(countdown);
+        }
+        const days = Math.floor(
+          (diff % (1000 * 60 * 60 * 24 * (365.25 / 12))) / (1000 * 60 * 60 * 24),
+        );
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.querySelectorAll(".timer").forEach((timer) => {
+          if (timer.querySelector(".seconds")) {
+            timer.querySelector(".seconds").innerHTML =
+              seconds < 10 ? `0${seconds}` : seconds;
+            timer.querySelector(".minutes").innerHTML =
+              minutes < 10 ? `0${minutes}` : minutes;
+            timer.querySelector(".hours").innerHTML = hours < 10 ? `0${hours}` : hours;
+            timer.querySelector(".days").innerHTML = days < 10 ? `0${days}` : days;
+          }
+        });
+      }, 1000);
+    }
+    $('body').localize();
+
+  } catch (e) {
+    // ignore
+  } finally {
+    try {
+      await showWinners();
+
+    } catch (er) {
+      // ignore
+    }
+  }
+}
+
+showLotteryInfo();
+
 
 // Leaderboard slider
 
@@ -58,10 +173,10 @@ const languages = document.querySelector(".languages");
 if (languages) {
   languages.addEventListener("click", () => {
     languages.classList.toggle("is-open");
-  });
+  }, true);
 
   document.addEventListener("click", (e) => {
-    if (e.target !== document.querySelector(".languages__item")) {
+    if ( !document.querySelector(".languages_main_item").contains(e.target)) {
       languages.classList.remove("is-open");
     }
   });
@@ -90,18 +205,9 @@ if (copyLinkBtn) {
 // Range
 
 const rangeWrapper = document.querySelectorAll(".tickets__range");
-const improvementBtn = document.querySelectorAll(".improvement-btn");
-
-improvementBtn.forEach((btn) => {
-  const parent = btn.parentNode;
-
-  btn.addEventListener("click", () => {
-    parent.querySelector(".tickets__range").classList.add("is-active");
-  });
-});
 
 document.addEventListener("click", (e) => {
-  const { target } = e;
+  const {target} = e;
   const targetParent = target.parentElement;
 
   if (
@@ -151,8 +257,7 @@ rangeWrapper.forEach((el) => {
   const updateVar = (value) => {
     el.querySelector(
       ".tickets__range-line",
-    ).style.background = `linear-gradient(to right, #A289FC 0%, #A289FC ${
-      value * 2
+    ).style.background = `linear-gradient(to right, #A289FC 0%, #A289FC ${value * 2
     }%, transparent ${value * 2}%, transparent 100%)`;
   };
 

@@ -2,8 +2,26 @@ import { CONTRACT_ABI } from "./abi.js";
 
 export const CONFIG = {
   chainId: 80001,
-  address: "0x0B70B0Fc3102fA4719EF1C73F5D2A0734D4D2331",
+  address: "0xA01eB9C0347305bd3993D4a881FB59759ab059c3",
   abi: CONTRACT_ABI,
-  messageToSign: "example message to sign",
-  inviter: "0x93f7b4beb202b32e85e71ff98ab49e4e0a3eed18",
+  messageToSign: "Authorization message",
 };
+
+export const rpcUrl = 'https://matic-testnet-archive-rpc.bwarelabs.com';
+
+export const addChainParams = {
+  method: "wallet_addEthereumChain",
+  params: [{
+    chainId: '0x13881',
+    rpcUrls: ["https://rpc-mumbai.maticvigil.com"],
+    chainName: "Mumbai",
+    nativeCurrency: {
+      name: "MATIC",
+      symbol: "MATIC",
+      decimals: 18
+    },
+    blockExplorerUrls: ["https://mumbai.polygonscan.com/"]
+  }]
+};
+
+export const jackpotAddress = '0xE2A0B9b79ceE6A6BD7F09bA8CfE4A03E8f902010';
