@@ -31,7 +31,7 @@ $(() => {
     i18next
         .use(i18nextBrowserLanguageDetector)
         .init({
-            debug: true,
+            debug: false,
             fallbackLng: 'en',
             resources: {
                 en: {

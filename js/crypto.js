@@ -206,7 +206,7 @@ const personalArea = async () => {
 
       const activeLottery = await readContract.checkActiveLottery();
       const price = await readContract.ticketPrice();
-      const ticketsAmount = document.querySelector('.tickets__input').value;
+      const ticketsAmount = document.querySelector('#ticketsCounter').value;
       if (ticketsAmount > 0) {
         await performOperation('buyTickets', ticketsAmount, activeLottery[0], {value: price.mul(ticketsAmount)});
         alert('Ticket(s) will be added to list when transaction succed');

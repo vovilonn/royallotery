@@ -145,9 +145,12 @@
                     </div>
 
                     <div class="tickets__btn_wrapper">
-                        <input class="btn txt-center tickets__input" type="number"
-                            placeholder="Enter the amount of tickets">
-                        </input>
+                        <div class="btn ticketsCounter">
+                            <button class="counterBtn minus">-</button>
+                            <input class="ticketsInputCounter" id="ticketsCounter" type="number" value="1"/>
+                            <button class="counterBtn plus">+</button>
+                        </div>
+                        
                         <button class="btn tickets__btn" type="button" data-i18n="personalArea.buyMoreTickets">
                             buy more tickets
                         </button>
@@ -294,6 +297,8 @@
     <script src="./js/main.js" type="module"></script>
 
     <script src="./dist/crypto.js" type="module"></script>
+
+    <script src="./js/counter.js"></script>
 </body>
 
 </html>
