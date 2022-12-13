@@ -353,6 +353,19 @@ export const CONTRACT_ABI =[
         type: "function"
     },
     {
+        inputs: [],
+        name: "checkJackPotAddress",
+        outputs: [
+            {
+                internalType: "address",
+                name: "JackPot",
+                type: "address"
+            }
+        ],
+        stateMutability: "view",
+        type: "function"
+    },
+    {
         inputs: [
             {
                 internalType: "address",
@@ -669,26 +682,14 @@ export const CONTRACT_ABI =[
         type: "function"
     },
     {
-        inputs: [
-            {
-                internalType: "uint256",
-                name: "_amount",
-                type: "uint256"
-            }
-        ],
+        inputs: [],
         name: "withdraw",
         outputs: [],
         stateMutability: "nonpayable",
         type: "function"
     },
     {
-        inputs: [
-            {
-                internalType: "uint256",
-                name: "_amount",
-                type: "uint256"
-            }
-        ],
+        inputs: [],
         name: "withdrawRefferalsIncome",
         outputs: [],
         stateMutability: "nonpayable",

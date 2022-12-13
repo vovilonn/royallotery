@@ -2,7 +2,7 @@ import { CONTRACT_ABI } from "./abi.js";
 
 export const CONFIG = {
   chainId: 80001,
-  address: "0xA01eB9C0347305bd3993D4a881FB59759ab059c3",
+  address: "0x415fD09EC7959f35A8Ba3318636475599DEfA42a",
   abi: CONTRACT_ABI,
   messageToSign: "Authorization message",
 };
@@ -23,5 +23,3 @@ export const addChainParams = {
     blockExplorerUrls: ["https://mumbai.polygonscan.com/"]
   }]
 };
-
-export const jackpotAddress = '0xE2A0B9b79ceE6A6BD7F09bA8CfE4A03E8f902010';

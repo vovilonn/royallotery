@@ -178,7 +178,7 @@ const personalArea = async () => {
     try {
       winnedWithdrawBtn.disabled = true;
       winnedWithdrawBtn.classList.add("disabled");
-      performOperation('withdraw', userInfo.balance);
+      performOperation('withdraw');
     } catch (err) {
       console.log(err);
     } finally {
@@ -190,7 +190,7 @@ const personalArea = async () => {
     try {
       withdrawBtn.disabled = true;
       withdrawBtn.classList.add("disabled");
-      await performOperation('withdrawRefferalsIncome', refBalance);
+      await performOperation('withdrawRefferalsIncome');
       alert('Amount will be send when transaction succed');
     } catch (err) {
       console.log(err);

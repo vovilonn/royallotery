@@ -2,7 +2,7 @@
 /* eslint-disable no-await-in-loop */
 
 
-import {CONFIG, jackpotAddress, rpcUrl} from "./config.js";
+import {CONFIG, rpcUrl} from "./config.js";
 
 const {ethers} = window;
 const {ethereum} = window;
@@ -62,8 +62,9 @@ const showWinners = async () => {
 const showLotteryInfo = async () => {
   try {
     const activeLottery = await readContract.checkActiveLottery();
+    const jackpotAddress = await readContract.checkJackPotAddress();
     const balance = await customHttpProvider.getBalance(jackpotAddress);
-
+    
     const jackPotSum = document.querySelector('.jackpot__sum');
     if (jackPotSum) {
       jackPotSum.innerHTML = `${(+ethers.utils.formatEther(balance)).toFixed(2)} BNB`;
