@@ -15,6 +15,10 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
+a {
+    color: rgb(0, 210, 0);
+}
+
 .txt-center {
     text-align: center;
 }
@@ -103,6 +107,7 @@ body {
     text-shadow: 0 0 34px rgba(255, 255, 255, 0.6);
     font-family: var(--user-font-2);
     text-transform: uppercase;
+    padding-top: 50px;
 }
 
 /* Button */
@@ -276,7 +281,7 @@ body {
     cursor: pointer;
     transition: all .5s;
     color: white;
-    padding: 4px;
+    padding: 0px;
 }
 
 .languages__item {
@@ -324,9 +329,14 @@ body {
 }
 
 .languages.is-open .languages__sub {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     opacity: 1;
     pointer-events: initial;
     transition-delay: .3s;
+    background: rgba(43, 43, 43, 0.4);
+    padding: 8px;
 }
 
 /* \Header */
@@ -1025,8 +1035,8 @@ input[type=range]::-webkit-slider-thumb {
     cursor: pointer;
 }
 
-.ticketsCounter{
-    display:flex;
+.ticketsCounter {
+    display: flex;
     justify-content: space-evenly;
     align-items: center;
     background: linear-gradient(91.12deg, #AA3EFF -4.01%, #0054CF 99.18%);
@@ -1045,7 +1055,8 @@ input[type=range]::-webkit-slider-thumb {
 
 .counterBtn {
     padding: 14px;
-    background-color: transparent; /* Green */
+    background-color: transparent;
+    /* Green */
     border: none;
     color: white;
 }
@@ -1504,6 +1515,10 @@ input[type=range]::-webkit-slider-thumb {
         font-size: 14px;
     }
 
+    .languages__item {
+        padding: 12px 8px;
+    }
+
     .tickets__intro {
         flex-wrap: wrap;
         gap: 24px;
@@ -1631,11 +1646,20 @@ input[type=range]::-webkit-slider-thumb {
 
     .header__right {
         width: 100%;
-        flex-direction: row-reverse;
+    }
+
+    .header .container {
+        flex-direction: column-reverse;
+        gap: 20px;
     }
 
     .languages {
         margin: 0;
+        padding: 0;
+    }
+
+    .btn-back {
+        padding-bottom: 20px;
     }
 
     .wallet-btn {
@@ -1798,7 +1822,17 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 @media (max-width: 480px) {
+    .header .container {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
+    .header__right {
+        flex-direction: row;
+    }
+
     .title {
+        padding-top: 32px;
         font-size: 32px;
     }
 
@@ -1836,7 +1870,8 @@ input[type=range]::-webkit-slider-thumb {
 
     .btn-back,
     .tickets__desc {
-        font-size: 14px;
+        font-size: 16px;
+        padding-bottom: 20px;
     }
 
     .mh {
@@ -1896,13 +1931,19 @@ input[type=range]::-webkit-slider-thumb {
         min-width: 325px;
         height: 52px;
     }
-    
+
     .btn.wallet-btn {
-        min-width: 153px;
-        max-width: 153px;
+        min-width: 200px;
+        max-width: 200px;
+        min-height: 40px;
+        max-height: 40px;
         width: 153px;
         height: 24px;
-        font-size: 10px;
+        font-size: 14px;
+    }
+
+    .languages {
+        padding: 8px;
     }
 
     .languages__item span {
@@ -1910,12 +1951,10 @@ input[type=range]::-webkit-slider-thumb {
     }
 
     .languages__item {
-        padding: 0;
+        padding: 4px;
     }
 
     .languages__sub {
-        margin: 3px 0 0;
-        padding: 3px 0 0;
         background: transparent;
     }
 

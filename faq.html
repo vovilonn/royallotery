@@ -1,483 +1,578 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Royal</title>
-    <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
 
-<header class="header">
-    <div class="container">
-        <a href="/" class="btn-back">
-            <p data-i18n="faq.mainPage">
-                main page
-            </p>
-            <svg width="59" height="16" viewBox="0 0 59 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z"
-                      fill="white"/>
-            </svg>
-        </a>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="btn-back">
+                <p data-i18n="faq.mainPage">
+                    main page
+                </p>
+                <svg width="59" height="16" viewBox="0 0 59 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z"
+                        fill="white" />
+                </svg>
+            </a>
 
-        <div class="header__right">
-            <button class="btn wallet-btn" data-i18n="main.connectWallet">Connect Wallet</button>
-            <ul class="languages">
-                <li class="languages__item languages_main_item">
+            <div class="header__right">
+                <button class="btn wallet-btn" data-i18n="main.connectWallet">Connect Wallet</button>
+                <ul class="languages">
+                    <li class="languages__item languages_main_item">
                         <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 6.375H24V11.625H0V6.375Z" fill="#1B75BB"/>
-                            <path d="M20.25 0.75H3.75C1.26488 0.75 0 2.59688 0 4.875V6.375H24V4.875C24 2.59688 22.7351 0.75 20.25 0.75Z" fill="#E6E7E8"/>
-                            <path d="M0 13.125C0 15.4031 1.26488 17.25 3.75 17.25H20.25C22.7351 17.25 24 15.4031 24 13.125V11.625H0V13.125Z" fill="#EC1C24"/>
+                            <path d="M0 6.375H24V11.625H0V6.375Z" fill="#1B75BB" />
+                            <path
+                                d="M20.25 0.75H3.75C1.26488 0.75 0 2.59688 0 4.875V6.375H24V4.875C24 2.59688 22.7351 0.75 20.25 0.75Z"
+                                fill="#E6E7E8" />
+                            <path
+                                d="M0 13.125C0 15.4031 1.26488 17.25 3.75 17.25H20.25C22.7351 17.25 24 15.4031 24 13.125V11.625H0V13.125Z"
+                                fill="#EC1C24" />
                         </svg>
                         <span>ru</span>
-                  
-                </li>
-                <ul class="languages__sub"  id="languageSwitcher">
+
+                    </li>
+                    <ul class="languages__sub" id="languageSwitcher">
+                    </ul>
                 </ul>
-            </ul>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<div
-        class="wrapper"
-        style="background: url('images/faq_bg.jpg') no-repeat left top fixed; background-size: cover"
->
-    <main>
-        <article class="faq">
+    <div class="wrapper" style="background: url('images/faq_bg.jpg') no-repeat left top fixed; background-size: cover">
+        <main>
+            <article class="faq">
+                <div class="container">
+                    <h2 class="title">FAQ</h2>
+                    <ul class="faq__list">
+                        <h3 class="title" data-i18n="faq.commonTitle">Common questions</h3>
+                        <li class="faq__item">
+                            <div class="faq__head">
+                                <p data-i18n="faq.commonQuestions.question1">
+                                    How can I take part in a lottery?
+                                </p>
+
+                                <svg width="59" height="16" viewBox="0 0 59 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="faq__body">
+                                <p data-i18n="faq.commonQuestions.answer1">
+                                    Just bind a wallet - it will be the identifier of your account. From this moment you
+                                    may immediately start buying lottery tickets.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="faq__item">
+                            <div class="faq__head">
+                                <p data-i18n="faq.commonQuestions.question2">
+                                    How do I bind a wallet?
+                                </p>
+
+                                <svg width="59" height="16" viewBox="0 0 59 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="faq__body">
+                                <p data-i18n="faq.commonQuestions.answer2">
+                                    Click the “Connect Wallet” button and go through the standard authorisation.
+                                </p>
+
+                            </div>
+                        </li>
+                        <li class="faq__item">
+                            <div class="faq__head">
+                                <p data-i18n="faq.commonQuestions.question3">
+                                    How do I buy a lottery ticket?
+                                </p>
+
+                                <svg width="59" height="16" viewBox="0 0 59 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="faq__body">
+                                <p data-i18n="faq.commonQuestions.answer3">
+                                    Click the "Start" button on the main page of the site or by clicking the "Buy more
+                                    tickets" button from your personal area. Then pay for the ticket.
+                                </p>
+
+                            </div>
+                        </li>
+                        <li class="faq__item">
+                            <div class="faq__head">
+                                <p data-i18n="faq.commonQuestions.question4">
+                                    How much can I win at the lottery?
+                                </p>
+
+                                <svg width="59" height="16" viewBox="0 0 59 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="faq__body">
+                                <p data-i18n="faq.commonQuestions.answer4">
+                                    The winning amount depends on the size of the prize pool.
+                                    The prize pool - money, which is drawn in one lottery. The prize pool is derived
+                                    from the 50% of the revenue from
+                                    tickets sold within the upcoming draw.
+                                </p>
+
+                            </div>
+                        </li>
+                        <li class="faq__item">
+                            <div class="faq__head">
+                                <p data-i18n="faq.commonQuestions.question5">
+                                    How often are drawings held?
+                                </p>
+
+                                <svg width="59" height="16" viewBox="0 0 59 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="faq__body">
+                                <p data-i18n="faq.commonQuestions.answer5">
+                                    Drawings are held every week. But we’ll be holding daily drawings soon.
+                                </p>
+
+                            </div>
+                        </li>
+                        <li class="faq__item">
+                            <div class="faq__head">
+                                <p data-i18n="faq.commonQuestions.question6">
+                                    What number of tickets may I buy?
+                                </p>
+
+                                <svg width="59" height="16" viewBox="0 0 59 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="faq__body">
+                                <p data-i18n="faq.commonQuestions.answer6">
+                                    You may buy any number of tickets.
+                                </p>
+
+                            </div>
+                        </li>
+                        <li class="faq__item">
+                            <div class="faq__head">
+                                <p data-i18n="faq.commonQuestions.question7">
+                                    How is the winnings distributed among the participants?
+                                </p>
+
+                                <svg width="59" height="16" viewBox="0 0 59 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="faq__body">
+                                <span data-i18n="faq.commonQuestions.answer7">
+                                    The winnings distribution is described in the Rules section.
+                                </span>
+                                <a href="rules.html#rulesAnchor1" data-i18n="faq.commonQuestions.answer7Link">
+                                    “Winnings Probability Distribution”
+                                </a>
+                            </div>
+                        </li>
+                        <li class="faq__item">
+                            <div class="faq__head">
+                                <p data-i18n="faq.commonQuestions.question8">
+                                    When will I receive my winnings?
+                                </p>
+
+                                <svg width="59" height="16" viewBox="0 0 59 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="faq__body">
+                                <p data-i18n="faq.commonQuestions.answer8">
+                                    The disbursement for winners is made immediately. As soon as your ticket enters the
+                                    prize category, you will receive
+                                    your winnings.
+                                </p>
+
+                            </div>
+                        </li>
+                        <li class="faq__item">
+                            <div class="faq__head">
+                                <p data-i18n="faq.commonQuestions.question9">
+                                    How can I find out the results?
+                                </p>
+
+                                <svg width="59" height="16" viewBox="0 0 59 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="faq__body">
+                                <span data-i18n="faq.commonQuestions.answer9">
+                                    As soon as your ticket wins, you will immediately receive the money in your wallet.
+                                    The first 10 winners will be shown in the leaderboard on the website. You can see
+                                    the results of other winners on the Binance (BNB) Blockchain Explorer website.
+                                    Smart contract address:
+                                </span>
+                                <a href="https://testnet.bscscan.com/address/0xBa6B177E14E72D4F8cD392A8947bF3A7BD5a0573#code">
+                                    https://testnet.bscscan.com/address/0xBa6B177E14E72D4F8cD392A8947bF3A7BD5a0573#code
+                                </a>
+
+                            </div>
+                        </li>
+                        <h3 class="title" data-i18n="faq.jackpotTitle">Jackpot</h3>
+                        <li class="faq__item">
+                            <div class="faq__head">
+                                <p data-i18n="faq.jackpot.question1">
+                                    How often do Jackpot draws take place?
+                                </p>
+
+                                <svg width="59" height="16" viewBox="0 0 59 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="faq__body">
+                                <p data-i18n="faq.jackpot.answer1">
+                                    The jackpot is drawn every 130 games. The administration decides to hold the Jackpot
+                                    drawing after the special announcement.
+                                </p>
+
+                            </div>
+                        </li>
+                        <li class="faq__item">
+                            <div class="faq__head">
+                                <p data-i18n="faq.jackpot.question2">
+                                    How can I take part in the Jackpot draw?
+                                </p>
+
+                                <svg width="59" height="16" viewBox="0 0 59 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="faq__body">
+                                <p data-i18n="faq.jackpot.answer2">
+                                    To participate in the Jackpot draw, you need to play 100 times in the daily (or
+                                    weekly) lottery.
+                                </p>
+
+                            </div>
+                        </li>
+                        <li class="faq__item">
+                            <div class="faq__head">
+                                <p data-i18n="faq.jackpot.question3">
+                                    How is the Jackpot draw going?
+                                </p>
+
+                                <svg width="59" height="16" viewBox="0 0 59 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="faq__body">
+                                <p data-i18n="faq.jackpot.answer3">
+                                    Randomizer picks the 10 random tickets participating in the Jackpot drawing and
+                                    distributes the amount of the
+                                    Jackpot prize pool between them.
+                                    The Jackpot prize pool is accumulated on a separate secure wallet and displayed on
+                                    the main screen of the website.
+                                </p>
+
+                            </div>
+                        </li>
+                        <li class="faq__item">
+                            <div class="faq__head">
+                                <p data-i18n="faq.jackpot.question4">
+                                    How is the Jackpot prize pool accumulated?
+                                </p>
+
+                                <svg width="59" height="16" viewBox="0 0 59 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="faq__body">
+                                <p data-i18n="faq.jackpot.answer4">
+                                    The Jackpot prize pool is derived from the 20% of the revenue from tickets sold
+                                    within the daily (or weekly) draws.
+                                </p>
+
+                            </div>
+                        </li>
+                        <h3 class="title" data-i18n="faq.winningsProbabilityTitle">Winnings Probability</h3>
+                        <li class="faq__item">
+                            <div class="faq__head">
+                                <p data-i18n="faq.winningsProbability.question1">
+                                    How can I improve my chance of winning a lottery?
+                                </p>
+
+                                <svg width="59" height="16" viewBox="0 0 59 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="faq__body">
+                                <p data-i18n="faq.winningsProbability.answer1">
+                                    All the tickets lost in the draw allow to increase the probability of winning of the
+                                    tickets that participate in the next draw.
+                                    One losing ticket allows you to apply +5% of the probability of winning to a new
+                                    ticket, but not more than 50% for a ticket.
+                                </p>
+
+                            </div>
+                        </li>
+                        <h3 class="title" data-i18n="faq.referralProgramTitle">Referral program</h3>
+                        <li class="faq__item">
+                            <div class="faq__head">
+                                <p data-i18n="faq.referralProgram.question1">
+                                    How to register with a referral link?
+                                </p>
+
+                                <svg width="59" height="16" viewBox="0 0 59 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="faq__body">
+                                <p data-i18n="faq.referralProgram.answer1">
+                                    For registration as a referral you must follow the referral link and bind your
+                                    wallet.
+                                </p>
+
+                            </div>
+                        </li>
+                        <li class="faq__item">
+                            <div class="faq__head">
+                                <p data-i18n="faq.referralProgram.question2">
+                                    How to share a referral link?
+                                </p>
+
+                                <svg width="59" height="16" viewBox="0 0 59 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="faq__body">
+                                <p data-i18n="faq.referralProgram.answer2">
+                                    To share a referral link, go to the personal area and click the “Copy link” button
+                                    in the “Referral link” section.
+                                </p>
+
+                            </div>
+                        </li>
+                        <li class="faq__item">
+                            <div class="faq__head">
+                                <p data-i18n="faq.referralProgram.question3">
+                                    How can I withdraw money from my referral account?
+                                </p>
+
+                                <svg width="59" height="16" viewBox="0 0 59 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="faq__body">
+                                <p data-i18n="faq.referralProgram.answer3">
+                                    To withdraw money from your referral account, go to the personal area and click the
+                                    “Withdraw funds” button in the “Referral link” section.
+                                </p>
+
+                            </div>
+                        </li>
+                        <li class="faq__item">
+                            <div class="faq__head">
+                                <p data-i18n="faq.referralProgram.question4">
+                                    On what referral actions do I receive incomes?
+                                </p>
+
+                                <svg width="59" height="16" viewBox="0 0 59 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="faq__body">
+                                <span data-i18n="faq.referralProgram.answer4">
+                                    You receive incomes each time the referred user purchases a ticket or wins a prize.
+                                    For details please see the Rules section. 
+                                </span>
+                                <a href="rules.html#rulesAnchor2" data-i18n="faq.referralProgram.answer4Link">
+                                    “Referral program” 
+                                </a>
+
+                            </div>
+                        </li>
+                        <h3 class="title" data-i18n="faq.smartContractAndAccountsTitle">Smart contract and accounts</h3>
+                        <li class="faq__item">
+                            <div class="faq__head">
+                                <p data-i18n="faq.smartContractAndAccounts.question1">
+                                    Where are the prize funds stored?
+                                </p>
+
+                                <svg width="59" height="16" viewBox="0 0 59 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="faq__body">
+                                <p data-i18n="faq.smartContractAndAccounts.answer1">
+                                    The funds of the daily (or weekly) lottery prize pool are stored in the balance of
+                                    Smart contract.
+                                    The jackpot is accumulated on a separate secure wallet. Its balance is displayed on
+                                    the main page of the website.
+                                </p>
+
+                            </div>
+                        </li>
+                        <li class="faq__item">
+                            <div class="faq__head">
+                                <p data-i18n="faq.smartContractAndAccounts.question2">
+                                    Where can I view the balance of a smart contract?
+                                </p>
+
+                                <svg width="59" height="16" viewBox="0 0 59 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="faq__body">
+                                <p data-i18n="faq.smartContractAndAccounts.answer2">
+                                    The funds of the daily (or weekly) lottery prize pool are stored in the balance of
+                                    Smart contract.
+                                </p>
+
+                                <a href="https://bscscan.com/address/0xBa6B177E14E72D4F8cD392A8947bF3A7BD5a0573#code" к>
+                                    https://bscscan.com/address/0xBa6B177E14E72D4F8cD392A8947bF3A7BD5a0573#code
+                                </a>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+        </main>
+
+        <footer class="footer">
             <div class="container">
-                <h2 class="title">FAQ</h2>
-                <ul class="faq__list">
-                    <h3 class="title" data-i18n="faq.commonTitle">Common questions</h3>
-                    <li class="faq__item">
-                        <div class="faq__head">
-                            <p data-i18n="faq.commonQuestions.question1">
-                                How can I take part in a lottery?
-                            </p>
+                <h2 class="title footer__title" data-i18n="main.moreInfo">more info</h2>
 
-                            <svg width="59" height="16" viewBox="0 0 59 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z" fill="white"/>
+                <p class="footer__desc" data-i18n="main.aboutProject">You can find out more about our project here</p>
+
+                <ul class="socials footer__socials">
+                    <li class="socials__item">
+                        <a href="https://discord.gg/2snM6AMR">
+                            <svg width="57" height="44" viewBox="0 0 57 44" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M47.3867 4.21329C43.84 2.55996 40 1.35996 36 0.666627C35.9649 0.665505 35.93 0.672087 35.8978 0.685909C35.8655 0.699731 35.8367 0.720458 35.8133 0.746627C35.3333 1.62663 34.7733 2.77329 34.4 3.65329C30.1573 3.01329 25.8427 3.01329 21.6 3.65329C21.2267 2.74663 20.6667 1.62663 20.16 0.746627C20.1333 0.693294 20.0533 0.666627 19.9733 0.666627C15.9733 1.35996 12.16 2.55996 8.58665 4.21329C8.55999 4.21329 8.53332 4.23996 8.50665 4.26663C1.25332 15.12 -0.74668 25.68 0.239987 36.1333C0.239987 36.1866 0.266654 36.24 0.319987 36.2666C5.11999 39.7866 9.73332 41.92 14.2933 43.3333C14.3733 43.36 14.4533 43.3333 14.48 43.28C15.5467 41.8133 16.5067 40.2666 17.3333 38.64C17.3867 38.5333 17.3333 38.4266 17.2267 38.4C15.7067 37.8133 14.2667 37.12 12.8533 36.32C12.7467 36.2666 12.7467 36.1066 12.8267 36.0266C13.12 35.8133 13.4133 35.5733 13.7067 35.36C13.76 35.3066 13.84 35.3066 13.8933 35.3333C23.0667 39.52 32.96 39.52 42.0267 35.3333C42.08 35.3066 42.16 35.3066 42.2133 35.36C42.5067 35.6 42.8 35.8133 43.0933 36.0533C43.2 36.1333 43.2 36.2933 43.0667 36.3466C41.68 37.1733 40.2133 37.84 38.6933 38.4266C38.5867 38.4533 38.56 38.5866 38.5867 38.6666C39.44 40.2933 40.4 41.84 41.44 43.3066C41.52 43.3333 41.6 43.36 41.68 43.3333C46.2667 41.92 50.88 39.7866 55.68 36.2666C55.7333 36.24 55.76 36.1866 55.76 36.1333C56.9333 24.0533 53.8133 13.5733 47.4933 4.26663C47.4667 4.23996 47.44 4.21329 47.3867 4.21329ZM18.72 29.76C15.9733 29.76 13.68 27.2266 13.68 24.1066C13.68 20.9866 15.92 18.4533 18.72 18.4533C21.5467 18.4533 23.7867 21.0133 23.76 24.1066C23.76 27.2266 21.52 29.76 18.72 29.76ZM37.3067 29.76C34.56 29.76 32.2667 27.2266 32.2667 24.1066C32.2667 20.9866 34.5067 18.4533 37.3067 18.4533C40.1333 18.4533 42.3733 21.0133 42.3467 24.1066C42.3467 27.2266 40.1333 29.76 37.3067 29.76Z"
+                                    fill="white" />
                             </svg>
-
-                        </div>
-                        <div class="faq__body">
-                            <p data-i18n="faq.commonQuestions.answer1">
-                                Just bind a wallet - it will be the identifier of your account. From this moment you may immediately start buying lottery tickets.
-                            </p>
-                        </div>
+                        </a>
                     </li>
-                    <li class="faq__item">
-                        <div class="faq__head">
-                            <p data-i18n="faq.commonQuestions.question2">
-                                How do I bind a wallet?
-                            </p>
-
-                            <svg width="59" height="16" viewBox="0 0 59 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z" fill="white"/>
+                    <li class="socials__item">
+                        <a href="https://t.me/royallotteryio">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M25 0.619141C11.5417 0.619141 0.619019 11.5418 0.619019 25.0001C0.619019 38.4584 11.5417 49.381 25 49.381C38.4583 49.381 49.3809 38.4584 49.3809 25.0001C49.3809 11.5418 38.4583 0.619141 25 0.619141ZM36.3127 17.1982C35.947 21.0504 34.3623 30.4127 33.5577 34.7281C33.2164 36.5567 32.5337 37.1662 31.8998 37.2393C30.4857 37.3612 29.4129 36.3129 28.0476 35.4108C25.9021 33.9967 24.683 33.119 22.6106 31.7536C20.1969 30.1689 21.7573 29.2911 23.147 27.877C23.5127 27.5113 29.7543 21.8306 29.8762 21.3186C29.8931 21.241 29.8908 21.1605 29.8696 21.084C29.8484 21.0076 29.8088 20.9374 29.7543 20.8797C29.608 20.7578 29.4129 20.8066 29.2423 20.831C29.0228 20.8797 25.6095 23.1471 18.9535 27.6332C17.9783 28.2915 17.1005 28.6329 16.3204 28.6085C15.4426 28.5841 13.7847 28.1209 12.5413 27.7064C11.0053 27.2188 9.81064 26.9506 9.90816 26.0972C9.95692 25.6584 10.5664 25.2195 11.7124 24.7563C18.8316 21.6599 23.5615 19.6119 25.9264 18.6367C32.7044 15.8085 34.0941 15.3209 35.0205 15.3209C35.2156 15.3209 35.6788 15.3696 35.9714 15.6134C36.2152 15.8085 36.2884 16.0767 36.3127 16.2717C36.2884 16.418 36.3371 16.8569 36.3127 17.1982Z"
+                                    fill="white" />
                             </svg>
-
-                        </div>
-                        <div class="faq__body">
-                            <p data-i18n="faq.commonQuestions.answer2">
-                                Click the “Connect Wallet” button and go through the standard authorisation.
-                            </p>
-
-                        </div>
-                    </li>
-                    <li class="faq__item">
-                        <div class="faq__head">
-                            <p data-i18n="faq.commonQuestions.question3">
-                                How do I buy a lottery ticket?
-                            </p>
-
-                            <svg width="59" height="16" viewBox="0 0 59 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z" fill="white"/>
-                            </svg>
-
-                        </div>
-                        <div class="faq__body">
-                            <p data-i18n="faq.commonQuestions.answer3">
-                                Click the "Start" button on the main page of the site or by clicking the "Buy more tickets" button from your personal area. Then pay for the ticket.
-                            </p>
-
-                        </div>
-                    </li>
-                    <li class="faq__item">
-                        <div class="faq__head">
-                            <p data-i18n="faq.commonQuestions.question4">
-                                How much can I win at the lottery?
-                            </p>
-
-                            <svg width="59" height="16" viewBox="0 0 59 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z" fill="white"/>
-                            </svg>
-
-                        </div>
-                        <div class="faq__body">
-                            <p data-i18n="faq.commonQuestions.answer4">
-                                The winning amount depends on the size of the prize pool.
-                                The prize pool - money, which is drawn in one lottery. The prize pool is derived from the 50% of the revenue from
-                                tickets sold within the upcoming draw.
-                            </p>
-
-                        </div>
-                    </li>
-                    <li class="faq__item">
-                        <div class="faq__head">
-                            <p data-i18n="faq.commonQuestions.question5">
-                                How often are drawings held?
-                            </p>
-
-                            <svg width="59" height="16" viewBox="0 0 59 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z" fill="white"/>
-                            </svg>
-
-                        </div>
-                        <div class="faq__body">
-                            <p data-i18n="faq.commonQuestions.answer5">
-                                Drawings are held every week. But we’ll be holding daily drawings soon.
-                            </p>
-
-                        </div>
-                    </li>
-                    <li class="faq__item">
-                        <div class="faq__head">
-                            <p data-i18n="faq.commonQuestions.question6">
-                                What number of tickets may I buy?
-                            </p>
-
-                            <svg width="59" height="16" viewBox="0 0 59 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z" fill="white"/>
-                            </svg>
-
-                        </div>
-                        <div class="faq__body">
-                            <p data-i18n="faq.commonQuestions.answer6">
-                                You may buy any number of tickets.
-                            </p>
-
-                        </div>
-                    </li>
-                    <li class="faq__item">
-                        <div class="faq__head">
-                            <p data-i18n="faq.commonQuestions.question7">
-                                How is the winnings distributed among the participants?
-                            </p>
-
-                            <svg width="59" height="16" viewBox="0 0 59 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z" fill="white"/>
-                            </svg>
-
-                        </div>
-                        <div class="faq__body">
-                            <p data-i18n="faq.commonQuestions.answer7">
-                                The winnings distribution is described in the Rules “Winnings Probability Distribution” section.
-                            </p>
-
-                        </div>
-                    </li>
-                    <li class="faq__item">
-                        <div class="faq__head">
-                            <p data-i18n="faq.commonQuestions.question8">
-                                When will I receive my winnings?
-                            </p>
-
-                            <svg width="59" height="16" viewBox="0 0 59 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z" fill="white"/>
-                            </svg>
-
-                        </div>
-                        <div class="faq__body">
-                            <p data-i18n="faq.commonQuestions.answer8">
-                                The disbursement for winners is made immediately. As soon as your ticket enters the prize category, you will receive
-                                your winnings.
-                            </p>
-
-                        </div>
-                    </li>
-                    <li class="faq__item">
-                        <div class="faq__head">
-                            <p data-i18n="faq.commonQuestions.question9">
-                                How can I find out the results?
-                            </p>
-
-                            <svg width="59" height="16" viewBox="0 0 59 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z" fill="white"/>
-                            </svg>
-
-                        </div>
-                        <div class="faq__body">
-                            <p data-i18n="faq.commonQuestions.answer9">
-                                As soon as your ticket wins, you will immediately receive the money in your wallet.
-                                The first 10 winners will be shown in the leaderboard on the website. You can see the results of other winners on the Binance (BNB) Blockchain Explorer website. 
-                                Smart contract address: https://testnet.bscscan.com/address/0xBa6B177E14E72D4F8cD392A8947bF3A7BD5a0573#code
-                            </p>
-
-                        </div>
-                    </li>
-                    <h3 class="title" data-i18n="faq.jackpotTitle">Jackpot</h3>
-                    <li class="faq__item">
-                        <div class="faq__head">
-                            <p data-i18n="faq.jackpot.question1">
-                                How often do Jackpot draws take place?
-                            </p>
-
-                            <svg width="59" height="16" viewBox="0 0 59 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z" fill="white"/>
-                            </svg>
-
-                        </div>
-                        <div class="faq__body">
-                            <p data-i18n="faq.jackpot.answer1">
-                                The jackpot is drawn every 130 games. The administration decides to hold the Jackpot drawing after the special announcement.
-                            </p>
-
-                        </div>
-                    </li>
-                    <li class="faq__item">
-                        <div class="faq__head">
-                            <p data-i18n="faq.jackpot.question2">
-                                How can I take part in the Jackpot draw?
-                            </p>
-
-                            <svg width="59" height="16" viewBox="0 0 59 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z" fill="white"/>
-                            </svg>
-
-                        </div>
-                        <div class="faq__body">
-                            <p data-i18n="faq.jackpot.answer2">
-                                To participate in the Jackpot draw, you need to play 100 times in the daily (or weekly) lottery.
-                            </p>
-
-                        </div>
-                    </li>
-                    <li class="faq__item">
-                        <div class="faq__head">
-                            <p data-i18n="faq.jackpot.question3">
-                                How is the Jackpot draw going?
-                            </p>
-
-                            <svg width="59" height="16" viewBox="0 0 59 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z" fill="white"/>
-                            </svg>
-
-                        </div>
-                        <div class="faq__body">
-                            <p data-i18n="faq.jackpot.answer3">
-                                Randomizer picks the 10 random tickets participating in the Jackpot drawing and distributes the amount of the
-                                Jackpot prize pool between them.
-                                The Jackpot prize pool is accumulated on a separate secure wallet and displayed on the main screen of the website.
-                            </p>
-
-                        </div>
-                    </li>
-                    <li class="faq__item">
-                        <div class="faq__head">
-                            <p data-i18n="faq.jackpot.question4">
-                                How is the Jackpot prize pool accumulated?
-                            </p>
-
-                            <svg width="59" height="16" viewBox="0 0 59 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z" fill="white"/>
-                            </svg>
-
-                        </div>
-                        <div class="faq__body">
-                            <p data-i18n="faq.jackpot.answer4">
-                                The Jackpot prize pool is derived from the 20% of the revenue from tickets sold within the daily (or weekly) draws.
-                            </p>
-
-                        </div>
-                    </li>
-                    <h3 class="title" data-i18n="faq.winningsProbabilityTitle">Winnings Probability</h3>
-                    <li class="faq__item">
-                        <div class="faq__head">
-                            <p data-i18n="faq.winningsProbability.question1">
-                                How can I improve my chance of winning a lottery?
-                            </p>
-
-                            <svg width="59" height="16" viewBox="0 0 59 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z" fill="white"/>
-                            </svg>
-
-                        </div>
-                        <div class="faq__body">
-                            <p data-i18n="faq.winningsProbability.answer1">
-                                All the tickets lost in the draw allow to increase the probability of winning of the tickets that participate in the next draw.
-                                One losing ticket allows you to apply +5% of the probability of winning to a new ticket, but not more than 50% for a ticket.
-                            </p>
-
-                        </div>
-                    </li>
-                    <h3 class="title" data-i18n="faq.referralProgramTitle">Referral program</h3>
-                    <li class="faq__item">
-                        <div class="faq__head">
-                            <p data-i18n="faq.referralProgram.question1">
-                                How to register with a referral link?
-                            </p>
-
-                            <svg width="59" height="16" viewBox="0 0 59 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z" fill="white"/>
-                            </svg>
-
-                        </div>
-                        <div class="faq__body">
-                            <p data-i18n="faq.referralProgram.answer1">
-                                For registration as a referral you must follow the referral link and bind your wallet.
-                            </p>
-
-                        </div>
-                    </li>
-                    <li class="faq__item">
-                        <div class="faq__head">
-                            <p data-i18n="faq.referralProgram.question2">
-                                How to share a referral link?
-                            </p>
-
-                            <svg width="59" height="16" viewBox="0 0 59 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z" fill="white"/>
-                            </svg>
-
-                        </div>
-                        <div class="faq__body">
-                            <p data-i18n="faq.referralProgram.answer2">
-                                To share a referral link, go to the personal area and click the “Copy link” button in the “Referral link” section.
-                            </p>
-
-                        </div>
-                    </li>
-                    <li class="faq__item">
-                        <div class="faq__head">
-                            <p data-i18n="faq.referralProgram.question3">
-                                How can I withdraw money from my referral account?
-                            </p>
-
-                            <svg width="59" height="16" viewBox="0 0 59 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z" fill="white"/>
-                            </svg>
-
-                        </div>
-                        <div class="faq__body">
-                            <p data-i18n="faq.referralProgram.answer3">
-                                To withdraw money from your referral account, go to the personal area and click the “Withdraw funds” button in the “Referral link” section.
-                            </p>
-
-                        </div>
-                    </li>
-                    <li class="faq__item">
-                        <div class="faq__head">
-                            <p data-i18n="faq.referralProgram.question4">
-                                On what referral actions do I receive incomes?
-                            </p>
-
-                            <svg width="59" height="16" viewBox="0 0 59 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z" fill="white"/>
-                            </svg>
-
-                        </div>
-                        <div class="faq__body">
-                            <p data-i18n="faq.referralProgram.answer4">
-                                You receive incomes each time the referred user purchases a ticket or wins a prize. For details please see the Rules “Referral program” section.
-                            </p>
-
-                        </div>
-                    </li>
-                    <h3 class="title" data-i18n="faq.smartContractAndAccountsTitle">Smart contract and accounts</h3>
-                    <li class="faq__item">
-                        <div class="faq__head">
-                            <p data-i18n="faq.smartContractAndAccounts.question1">
-                                Where are the prize funds stored?
-                            </p>
-
-                            <svg width="59" height="16" viewBox="0 0 59 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z" fill="white"/>
-                            </svg>
-
-                        </div>
-                        <div class="faq__body">
-                            <p data-i18n="faq.smartContractAndAccounts.answer1">
-                                The funds of the daily (or weekly) lottery prize pool are stored in the balance of Smart contract.
-                                The jackpot is accumulated on a separate secure wallet. Its balance is displayed on the main page of the website.
-                            </p>
-
-                        </div>
-                    </li>
-                    <li class="faq__item">
-                        <div class="faq__head">
-                            <p data-i18n="faq.smartContractAndAccounts.question2">
-                                Where can I view the balance of a smart contract?
-                            </p>
-
-                            <svg width="59" height="16" viewBox="0 0 59 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7C0.447715 7 4.82823e-08 7.44772 0 8C-4.82823e-08 8.55228 0.447715 9 1 9L1 7ZM58.7071 8.70711C59.0976 8.31659 59.0976 7.68342 58.7071 7.2929L52.3431 0.928937C51.9526 0.538412 51.3195 0.538412 50.9289 0.928937C50.5384 1.31946 50.5384 1.95263 50.9289 2.34315L56.5858 8L50.9289 13.6569C50.5384 14.0474 50.5384 14.6805 50.9289 15.0711C51.3195 15.4616 51.9526 15.4616 52.3431 15.0711L58.7071 8.70711ZM1 9L58 9L58 7L1 7L1 9Z" fill="white"/>
-                            </svg>
-
-                        </div>
-                        <div class="faq__body">
-                            <p data-i18n="faq.smartContractAndAccounts.answer2">
-                                The funds of the daily (or weekly) lottery prize pool are stored in the balance of Smart contract.
-                            </p>
-
-                            <a href="https://bscscan.com/address/0xBa6B177E14E72D4F8cD392A8947bF3A7BD5a0573#code"к>
-                                https://bscscan.com/address/0xBa6B177E14E72D4F8cD392A8947bF3A7BD5a0573#code
-                            </a>
-
-                        </div>
+                        </a>
                     </li>
                 </ul>
             </div>
-        </article>
-    </main>
+        </footer>
+    </div>
 
-    <footer class="footer">
-        <div class="container">
-            <h2 class="title footer__title" data-i18n="main.moreInfo">more info</h2>
-
-            <p class="footer__desc" data-i18n="main.aboutProject">You can find out more about our project here</p>
-
-            <ul class="socials footer__socials">
-                <li class="socials__item">
-                    <a href="https://discord.gg/2snM6AMR">
-                        <svg width="57" height="44" viewBox="0 0 57 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M47.3867 4.21329C43.84 2.55996 40 1.35996 36 0.666627C35.9649 0.665505 35.93 0.672087 35.8978 0.685909C35.8655 0.699731 35.8367 0.720458 35.8133 0.746627C35.3333 1.62663 34.7733 2.77329 34.4 3.65329C30.1573 3.01329 25.8427 3.01329 21.6 3.65329C21.2267 2.74663 20.6667 1.62663 20.16 0.746627C20.1333 0.693294 20.0533 0.666627 19.9733 0.666627C15.9733 1.35996 12.16 2.55996 8.58665 4.21329C8.55999 4.21329 8.53332 4.23996 8.50665 4.26663C1.25332 15.12 -0.74668 25.68 0.239987 36.1333C0.239987 36.1866 0.266654 36.24 0.319987 36.2666C5.11999 39.7866 9.73332 41.92 14.2933 43.3333C14.3733 43.36 14.4533 43.3333 14.48 43.28C15.5467 41.8133 16.5067 40.2666 17.3333 38.64C17.3867 38.5333 17.3333 38.4266 17.2267 38.4C15.7067 37.8133 14.2667 37.12 12.8533 36.32C12.7467 36.2666 12.7467 36.1066 12.8267 36.0266C13.12 35.8133 13.4133 35.5733 13.7067 35.36C13.76 35.3066 13.84 35.3066 13.8933 35.3333C23.0667 39.52 32.96 39.52 42.0267 35.3333C42.08 35.3066 42.16 35.3066 42.2133 35.36C42.5067 35.6 42.8 35.8133 43.0933 36.0533C43.2 36.1333 43.2 36.2933 43.0667 36.3466C41.68 37.1733 40.2133 37.84 38.6933 38.4266C38.5867 38.4533 38.56 38.5866 38.5867 38.6666C39.44 40.2933 40.4 41.84 41.44 43.3066C41.52 43.3333 41.6 43.36 41.68 43.3333C46.2667 41.92 50.88 39.7866 55.68 36.2666C55.7333 36.24 55.76 36.1866 55.76 36.1333C56.9333 24.0533 53.8133 13.5733 47.4933 4.26663C47.4667 4.23996 47.44 4.21329 47.3867 4.21329ZM18.72 29.76C15.9733 29.76 13.68 27.2266 13.68 24.1066C13.68 20.9866 15.92 18.4533 18.72 18.4533C21.5467 18.4533 23.7867 21.0133 23.76 24.1066C23.76 27.2266 21.52 29.76 18.72 29.76ZM37.3067 29.76C34.56 29.76 32.2667 27.2266 32.2667 24.1066C32.2667 20.9866 34.5067 18.4533 37.3067 18.4533C40.1333 18.4533 42.3733 21.0133 42.3467 24.1066C42.3467 27.2266 40.1333 29.76 37.3067 29.76Z" fill="white"/>
-                        </svg>
-                    </a>
-                </li>
-                <li class="socials__item">
-                    <a href="https://t.me/royallotteryio">
-                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M25 0.619141C11.5417 0.619141 0.619019 11.5418 0.619019 25.0001C0.619019 38.4584 11.5417 49.381 25 49.381C38.4583 49.381 49.3809 38.4584 49.3809 25.0001C49.3809 11.5418 38.4583 0.619141 25 0.619141ZM36.3127 17.1982C35.947 21.0504 34.3623 30.4127 33.5577 34.7281C33.2164 36.5567 32.5337 37.1662 31.8998 37.2393C30.4857 37.3612 29.4129 36.3129 28.0476 35.4108C25.9021 33.9967 24.683 33.119 22.6106 31.7536C20.1969 30.1689 21.7573 29.2911 23.147 27.877C23.5127 27.5113 29.7543 21.8306 29.8762 21.3186C29.8931 21.241 29.8908 21.1605 29.8696 21.084C29.8484 21.0076 29.8088 20.9374 29.7543 20.8797C29.608 20.7578 29.4129 20.8066 29.2423 20.831C29.0228 20.8797 25.6095 23.1471 18.9535 27.6332C17.9783 28.2915 17.1005 28.6329 16.3204 28.6085C15.4426 28.5841 13.7847 28.1209 12.5413 27.7064C11.0053 27.2188 9.81064 26.9506 9.90816 26.0972C9.95692 25.6584 10.5664 25.2195 11.7124 24.7563C18.8316 21.6599 23.5615 19.6119 25.9264 18.6367C32.7044 15.8085 34.0941 15.3209 35.0205 15.3209C35.2156 15.3209 35.6788 15.3696 35.9714 15.6134C36.2152 15.8085 36.2884 16.0767 36.3127 16.2717C36.2884 16.418 36.3371 16.8569 36.3127 17.1982Z" fill="white"/>
-                        </svg>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </footer>
-</div>
-
-<script src="./js/ethers-5.2.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-<script src="./js/main.js"  type="module"></script>
+    <script src="./js/ethers-5.2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./js/main.js" type="module"></script>
 
 
-<script src="./dist/crypto.js" type="module"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/i18next@21.6.10/i18next.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-i18next@1.2.1/jquery-i18next.min.js"></script>
-<script
-    src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/i18next-locize-backend@4.2.8/i18nextLocizeBackend.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/locize-lastused@3.0.13/locizeLastUsed.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/locize@2.2.4/locize.min.js"></script>
+    <script src="./dist/crypto.js" type="module"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.10/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-i18next@1.2.1/jquery-i18next.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-locize-backend@4.2.8/i18nextLocizeBackend.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locize-lastused@3.0.13/locizeLastUsed.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locize@2.2.4/locize.min.js"></script>
 
-<script src="js/translations/i18n.js" type="module"></script>
+    <script src="js/translations/i18n.js" type="module"></script>
 
 </body>
+
 </html>
