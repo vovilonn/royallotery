@@ -57,8 +57,8 @@ export const Enlocales = {
         mainPage: "mainPage",
         commonTitle: "Common questions",
         commonQuestions: {
-            question1: "How can I take part in a lottery?",
-            answer1: "Just bind a wallet - it will be the identifier of your account. From this moment you may immediately start buying lottery tickets.",
+            question1:"How can I take part in a lottery?",
+            answer1:"Just bind a wallet - it will be the identifier of your account. From this moment you may immediately start buying lottery tickets.",
             question2:"How do I bind a wallet?",
             answer2:"Click the “Connect Wallet” button and go through the standard authorisation.",
             question3:"How do I buy a lottery ticket?",
@@ -70,11 +70,12 @@ export const Enlocales = {
             question6:"What number of tickets may I buy?",
             answer6:"You may buy any number of tickets.",
             question7:"How is the winnings distributed among the participants?",
-            answer7:"The winnings distribution is described in the Rules “Winnings Probability Distribution” section. ",
+            answer7:"The winnings distribution is described in the Rules  section.",
+            answer7Link:"“Winnings Probability Distribution”",
             question8: "When will I receive my winnings?",
             answer8: "The disbursement for winners is made immediately. As soon as your ticket enters the prize category, you will receive your winnings.",
             question9: "How can I find out the results?",
-            answer9: "	As soon as your ticket wins, you will immediately receive the money in your wallet. The first 10 winners will be shown in the leaderboard on the website. You can see the results of other winners on the Binance (BNB) Blockchain Explorer website. Smart contract address: https://testnet.bscscan.com/address/0xBa6B177E14E72D4F8cD392A8947bF3A7BD5a0573#code",
+            answer9: "	As soon as your ticket wins, you will immediately receive the money in your wallet. The first 10 winners will be shown in the leaderboard on the website. You can see the results of other winners on the Binance (BNB) Blockchain Explorer website. Smart contract address: ",
         },
         jackpotTitle: "Jackpot",
         jackpot: {
@@ -87,7 +88,7 @@ export const Enlocales = {
             question4: "How is the Jackpot prize pool accumulated?",
             answer4: "The Jackpot prize pool is derived from the 20% of the revenue from tickets sold within the daily (or weekly) draws.",
         },
-        winningsProbabilityTitle: "winningsProbability",
+        winningsProbabilityTitle: "Winnings probability",
         winningsProbability: {
             question1: "How can I improve my chance of winning a lottery?",
             answer1: "All the tickets lost in the draw allow to increase the probability of winning of the tickets that participate in the next draw. One losing ticket allows you to apply +5% of the probability of winning to a new ticket, but not more than 50% for a ticket.",
@@ -101,7 +102,8 @@ export const Enlocales = {
             question3: "How can I withdraw money from my referral account?",
             answer3: "To withdraw money from your referral account, go to the personal area and click the “Withdraw funds” button in the “Referral link” section.",
             question4: "On what referral actions do I receive incomes?",
-            answer4: "You receive incomes each time the referred user purchases a ticket or wins a prize. For details please see the Rules “Referral program” section.",
+            answer4: "You receive incomes each time the referred user purchases a ticket or wins a prize. For details please see the Rules section. ",
+            answer4Link: "“Referral program”",
         },
         smartContractAndAccountsTitle: "Smart contract and accounts",
         smartContractAndAccounts: {
@@ -116,9 +118,12 @@ export const Enlocales = {
         question1: "Main terms",
         answer1: {
             1: "A lottery ticket - an internal product with a unique identifier that makes you eligible for the next drawing.",
-            2: "Lottery - is a drawing of cash prizes with tickets, based on a self-executive independent algorithm of the random choices of winners (please see the Rules 'Winnings Probability Distribution' section). Cash prizes are in the BNB currency.",
-            3: "Smart contract – independent protocol governing the distribution and charging of lottery winnings. (Smart contract address is specified in the Rules «Reliability Guarantee» section).",
-            4: "Randomizer – the algorithm of the random choices of winners, fixed in a smart-contract.",
+            2: "Lottery - is a drawing of cash prizes with tickets, based on a self-executive independent algorithm of the random choices of winners (please see the Rules section ",
+            link1: "«Winnings Probability Distribution» ",
+            3: "Cash prizes are in the BNB currency.",
+            4: "Smart contract – independent protocol governing the distribution and charging of lottery winnings. (Smart contract address is specified in the Rules section ",
+            link2: "«Reliability Guarantee»",
+            5: "Randomizer – the algorithm of the random choices of winners, fixed in a smart-contract.",
         },
         question2: "Lottery participation requirements",
         answer2: {
@@ -143,9 +148,10 @@ export const Enlocales = {
         answer5: {
             1: "The draw starts at the scheduled time. After the draw, the date and time of the next draw appear.",
             2: "All users who have bought a ticket participate in the draw.",
-            3: "When the draw begins, the randomizer selects the winners in stages (please see the Rules 'Winnings Probability Distribution' section).",
+            3: "When the draw begins, the randomizer selects the winners in stages (please see the Rules section ",
             4: "The disbursement for winners is made immediately at the time of winning.",
-            5: "The tickets lost in the previous draw allow to apply improvement of the probability of winning to the tickets that participate in the next draw (please see the Rules «Improving chance of winning» section).",
+            5: "The tickets lost in the previous draw allow to apply improvement of the probability of winning to the tickets that participate in the next draw (please see the Rules section ",
+            link: "«Improving chance of winning» ", 
         },
         question6: "Winnings Probability Distribution",
         answer6: {
@@ -199,7 +205,8 @@ export const Enlocales = {
         question9: "Personal area",
         answer9: {
             1: "All tickets that have participated or will participate in draws are presented in your personal area.",
-            2: "In the 'My tickets' section, you can manage the probability of winning tickets (please see the Rules «Improving chance of winning» section) and purchase new tickets.",
+            2: "In the 'My tickets' section, you can manage the probability of winning tickets (please see the Rules section",
+            22: ") and purchase new tickets.",
             3: "The 'Referral link' section displays your referral link, the number of referrals and the amount of referral revenue, which can be withdrawn by clicking on the 'Withdraw funds' button.",
         },
         question10: "Referral program",
@@ -208,6 +215,7 @@ export const Enlocales = {
             2: "The referrer will receive a commission by a three-level system (according to the 'Referral Incomes' table) each time the referred user purchases a ticket or wins a prize.",
             3: "Referral revenue is shown in the user's personal area and is available for withdrawal at any time.",
         },
+        referralIncomesTableTitle: "Referral Incomes",
         referralIncomesTable: {
             headColumn: {
                 1: "Level of the referral",
@@ -229,7 +237,7 @@ export const Enlocales = {
         question11: "Reliability Guarantee",
         answer11: {
             1: "The reliability of our system is guaranteed by a smart contract, which underlies the software core of the lottery. The algorithm of the distribution and charging of lottery winnings is protected from changes and provided for viewing on the service Binance (BNB) Blockchain Explorer.",
-            2: "Smart contract address: https://bscscan.com/address/0xBa6B177E14E72D4F8cD392A8947bF3A7BD5a0573#code",
+            2: "Smart contract address: ",
             3: "You always may have an inside look at the lottery working.",
             4: "Royal Lottery - Openness. Fairness. High probability of winning for regular participants (up to 50%).",
         },
