@@ -127,7 +127,7 @@ export const Enlocales = {
         },
         question2: "Lottery participation requirements",
         answer2: {
-            1: "1) Having a wallet.",
+            1: "1) Having a WEB3 wallet with BNB coins.",
             2: "2) Buying a lottery ticket.",
         },
         question3: "The ticket purchase",
@@ -159,8 +159,9 @@ export const Enlocales = {
             2: "The first ticket wins the prize of 10% of the cash pool.",
             3: "The next 10 tickets fall into the second category. Each ticket wins the prize of 2% of the cash pool",
             4: "10% of tickets that have not fallen into the first two categories receive a prize of doubled ticket price (each ticket).",
-            5: "5% of tickets that have not fallen into the first three categories receive a prize of full ticket price (each ticket).",
-            6: "10% of tickets that have not fallen into the first four categories receive a prize of half ticket price (each ticket).",
+            5: "15% of tickets that have not fallen into the first three categories receive a prize of half the ticket price (each ticket).",
+            6: "10% of tickets that have not fallen into the first four categories receive a quarter of the ticket price (each ticket).",
+            7: "The remaining undistributed funds of the prize fund are distributed in equal shares between the winning tickets of the 1st and 2nd category.",
         },
         theWinningsDistributionTableTitle: "The winnings distribution table.",
         theWinningsDistributionTable: {

@@ -1310,6 +1310,7 @@ input[type=range]::-webkit-slider-thumb {
     line-height: 140%;
     letter-spacing: 0.03em;
     padding-left: 24px;
+    padding-right: 24px;
     padding-top: 0;
     padding-bottom: 0;
     pointer-events: none;
@@ -1822,18 +1823,29 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 @media (max-width: 480px) {
+    .table-el {
+        font-size: 12px !important;
+    }
+
     .header .container {
-        flex-direction: column-reverse;
-        gap: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
     }
 
     .header__right {
-        flex-direction: row;
+        padding-bottom: 20px;
     }
 
     .title {
         padding-top: 32px;
         font-size: 32px;
+    }
+
+    .faq__body {
+        padding-left: 8px;
+        padding-right: 8px;
     }
 
     .faq__list {
@@ -1871,7 +1883,10 @@ input[type=range]::-webkit-slider-thumb {
     .btn-back,
     .tickets__desc {
         font-size: 16px;
-        padding-bottom: 20px;
+    }
+
+    .btn-back {
+        padding-bottom: 0px;
     }
 
     .mh {
@@ -1884,7 +1899,7 @@ input[type=range]::-webkit-slider-thumb {
 
     .tickets__timer p {
         font-size: 20px;
-        max-width: 230px;
+        max-width: 260px;
     }
 
     .ref-link {
@@ -1933,17 +1948,17 @@ input[type=range]::-webkit-slider-thumb {
     }
 
     .btn.wallet-btn {
-        min-width: 200px;
-        max-width: 200px;
-        min-height: 40px;
-        max-height: 40px;
+        min-width: 230px;
+        max-width: 230px;
+        min-height: 46px;
+        max-height: 46px;
         width: 153px;
         height: 24px;
         font-size: 14px;
     }
 
     .languages {
-        padding: 8px;
+        padding: 10px;
     }
 
     .languages__item span {
@@ -1974,6 +1989,19 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 @media (max-width: 350px) {
+    .header .container {
+        flex-direction: column-reverse;
+    }
+
+    .header__right {
+        margin-bottom: 8px;
+    }
+
+    .btn.wallet-btn {
+        min-width: 230px;
+        max-width: 230px;
+    }
+
     .btn {
         max-width: initial;
         min-width: initial;
@@ -2014,6 +2042,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .table {
+    overflow:auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
