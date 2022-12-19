@@ -30,6 +30,8 @@ export const Rulocales = {
     },
     personalArea:{
         moreTicketsTitle: "МОИ БИЛЕТЫ",
+        tookPart: "Вы приняли участие в ",
+        lotteries: " лотереях",
         moreTicketsAbout: "Вы можете улучшить свои билеты на следующий тур - это повысит ваши шансы на победу*",
         timerTitle: "ОСТАЛОСЬ ДО КОНЦА РОЗЫГРЫША",
         numberOfMyTickets:"Количество моих билетов:",

@@ -1676,7 +1676,8 @@ input[type=range]::-webkit-slider-thumb {
 
 @media (max-width: 576px) {
     .tickets__info {
-        display: none;
+        max-width: inherit;
+        margin-bottom: 12px;
     }
 
     .tickets__item {
@@ -1684,9 +1685,14 @@ input[type=range]::-webkit-slider-thumb {
         gap: 14px;
     }
 
+    .tickets__head {
+        display: block;
+    }
+
     .tickets__id {
         width: 100%;
-        margin: 0 25px 34px;
+        margin: 0;
+        margin-bottom: 18px;
     }
 
     .ref-received__wrapper {
@@ -2077,4 +2083,8 @@ input[type=range]::-webkit-slider-thumb {
 
 .table-el:nth-last-child(3) {
     border-bottom: 1px solid;
+}
+
+.lotteries_amount {
+    margin-top: 12px;
 }
