@@ -2,7 +2,7 @@ import { CONTRACT_ABI } from "./abi.js";
 
 export const CONFIG = {
   chainId: 80001,
-  address: "0x415fD09EC7959f35A8Ba3318636475599DEfA42a",
+  address: "0x16773beCE0Ba23bF189f58eb9f15Ce2a3490f3DB",
   abi: CONTRACT_ABI,
   messageToSign: "Authorization message",
 };
