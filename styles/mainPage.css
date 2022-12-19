@@ -1,0 +1,16 @@
+.header .container {
+    flex-direction: row;
+}
+
+@media (max-width: 480px){
+    .header__right {
+        padding-bottom: 0;
+    }
+}
+
+@media (max-width: 350px){
+    .btn.wallet-btn {
+        min-width: 190px;
+        max-width: 190px;
+    }
+}
