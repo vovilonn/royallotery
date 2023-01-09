@@ -30,7 +30,7 @@ const showWinners = async () => {
   const lotteriesInfo = [];
   let lotteryId = 1;
   let emptyLotteriesAmount = 0;
-  let currentLottery = await readContract.checkWinners(lotteryId);;
+  let currentLottery = await readContract.checkWinners(lotteryId);
   do {
     const currentLotteryInfo = await readContract.LotteryId(lotteryId);
     if (currentLottery.win1[0]) {

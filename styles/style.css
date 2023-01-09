@@ -2088,3 +2088,7 @@ input[type=range]::-webkit-slider-thumb {
 .lotteries_amount {
     margin-top: 12px;
 }
+
+.tickets_cost {
+    margin-top: 12px;
+}

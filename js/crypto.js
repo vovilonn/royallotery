@@ -174,7 +174,7 @@ const personalArea = async () => {
   const userInfo = await readContract.UserInfo(userAddress);
   const lotterysAmountEl = document.querySelector("#lotterysAmount");
   if (lotterysAmountEl) {
-    lotterysAmountEl.innerHTML = userInfo.LotterysAmount || 0;
+    lotterysAmountEl.innerHTML = userInfo.LotteriesAmount || 0;
   }
   const balance = ethers.utils.formatEther(userInfo.balance);
   winBalanceNode.textContent = `${balance} BNB`;
