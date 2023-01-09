@@ -34,6 +34,8 @@ export const Enlocales = {
     },
     personalArea:{
         moreTicketsTitle: "MY TICKETS",
+        tookPart: "You took part in ",
+        lotteries: " lotteries",
         moreTicketsAbout: "You can improve your tickets for the next tour - this will increase your chances of winning*",
         timerTitle: "LEFT UNTIL THE END OF THE DRAW",
         numberOfMyTickets:"Number of my tickets:",

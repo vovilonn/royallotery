@@ -50,6 +50,25 @@ export const CONTRACT_ABI =[
             },
             {
                 indexed: false,
+                internalType: "uint256",
+                name: "amount",
+                type: "uint256"
+            }
+        ],
+        name: "WithdrawRefferalsIncome",
+        type: "event"
+    },
+    {
+        anonymous: false,
+        inputs: [
+            {
+                indexed: false,
+                internalType: "address",
+                name: "user",
+                type: "address"
+            },
+            {
+                indexed: false,
                 internalType: "uint32",
                 name: "amount",
                 type: "uint32"
@@ -88,6 +107,105 @@ export const CONTRACT_ABI =[
         ],
         name: "increaseChances",
         type: "event"
+    },
+    {
+        anonymous: false,
+        inputs: [
+            {
+                indexed: false,
+                internalType: "address",
+                name: "user",
+                type: "address"
+            },
+            {
+                indexed: false,
+                internalType: "uint256",
+                name: "time",
+                type: "uint256"
+            },
+            {
+                indexed: false,
+                internalType: "address",
+                name: "inviter",
+                type: "address"
+            }
+        ],
+        name: "newUser",
+        type: "event"
+    },
+    {
+        inputs: [
+            {
+                internalType: "uint32",
+                name: "",
+                type: "uint32"
+            }
+        ],
+        name: "EndId",
+        outputs: [
+            {
+                internalType: "uint32",
+                name: "currentWinner",
+                type: "uint32"
+            },
+            {
+                internalType: "uint32",
+                name: "totalWinners",
+                type: "uint32"
+            },
+            {
+                internalType: "uint256",
+                name: "potValue",
+                type: "uint256"
+            },
+            {
+                internalType: "bool",
+                name: "started",
+                type: "bool"
+            },
+            {
+                internalType: "uint32",
+                name: "tenPercent",
+                type: "uint32"
+            },
+            {
+                internalType: "uint32",
+                name: "fifteenPercent",
+                type: "uint32"
+            },
+            {
+                internalType: "uint256",
+                name: "totalchances",
+                type: "uint256"
+            },
+            {
+                internalType: "uint256",
+                name: "curChances",
+                type: "uint256"
+            },
+            {
+                internalType: "uint256",
+                name: "curRandom",
+                type: "uint256"
+            },
+            {
+                internalType: "uint32",
+                name: "cashBack",
+                type: "uint32"
+            },
+            {
+                internalType: "bool",
+                name: "chancesSet",
+                type: "bool"
+            },
+            {
+                internalType: "bool",
+                name: "randomSet",
+                type: "bool"
+            }
+        ],
+        stateMutability: "view",
+        type: "function"
     },
     {
         inputs: [],
@@ -158,7 +276,7 @@ export const CONTRACT_ABI =[
         outputs: [
             {
                 internalType: "uint32",
-                name: "LotterysAmount",
+                name: "LotteriesAmount",
                 type: "uint32"
             },
             {
@@ -499,11 +617,16 @@ export const CONTRACT_ABI =[
         inputs: [
             {
                 internalType: "uint32",
+                name: "amount",
+                type: "uint32"
+            },
+            {
+                internalType: "uint32",
                 name: "_ID",
                 type: "uint32"
             }
         ],
-        name: "endLottery",
+        name: "increaseChance",
         outputs: [],
         stateMutability: "nonpayable",
         type: "function"
@@ -521,9 +644,22 @@ export const CONTRACT_ABI =[
                 type: "uint32"
             }
         ],
-        name: "increaseChance",
+        name: "moneyBack",
         outputs: [],
         stateMutability: "nonpayable",
+        type: "function"
+    },
+    {
+        inputs: [
+            {
+                internalType: "uint32",
+                name: "_ID",
+                type: "uint32"
+            }
+        ],
+        name: "moneyRefund",
+        outputs: [],
+        stateMutability: "payable",
         type: "function"
     },
     {
@@ -569,6 +705,24 @@ export const CONTRACT_ABI =[
     {
         inputs: [
             {
+                internalType: "uint256",
+                name: "_amount",
+                type: "uint256"
+            },
+            {
+                internalType: "uint32",
+                name: "_ID",
+                type: "uint32"
+            }
+        ],
+        name: "setChances",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function"
+    },
+    {
+        inputs: [
+            {
                 internalType: "uint32",
                 name: "_ID",
                 type: "uint32"
@@ -593,6 +747,42 @@ export const CONTRACT_ABI =[
             }
         ],
         name: "setLottery",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function"
+    },
+    {
+        inputs: [
+            {
+                internalType: "uint256",
+                name: "_amount",
+                type: "uint256"
+            },
+            {
+                internalType: "uint32",
+                name: "_ID",
+                type: "uint32"
+            }
+        ],
+        name: "setRandom",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function"
+    },
+    {
+        inputs: [
+            {
+                internalType: "uint256",
+                name: "_amount",
+                type: "uint256"
+            },
+            {
+                internalType: "uint32",
+                name: "_ID",
+                type: "uint32"
+            }
+        ],
+        name: "setWinners",
         outputs: [],
         stateMutability: "nonpayable",
         type: "function"

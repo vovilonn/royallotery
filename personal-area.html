@@ -110,6 +110,10 @@
                         </div>
                     </div>
 
+                    <div class="tickets__left lotteries_amount">
+                        <span data-i18n="personalArea.tookPart">You took part in </span><span id="lotterysAmount">0</span><span data-i18n="personalArea.lotteries"> lotteries</span>
+                     </div>
+
                     <div class="tickets__wrapper">
                         <div class="tickets__head">
                             <div class="tickets__id">
@@ -145,11 +149,14 @@
                     </div>
 
                     <div class="tickets__btn_wrapper">
+                        <div>
                         <div class="btn ticketsCounter">
                             <button class="counterBtn minus">-</button>
                             <input class="ticketsInputCounter" id="ticketsCounter" type="number" value="1"/>
                             <button class="counterBtn plus">+</button>
                         </div>
+                        <div class="tickets_cost">0.00 BNB</div>
+                    </div>
                         
                         <button class="btn tickets__btn" type="button" data-i18n="personalArea.buyMoreTickets">
                             buy more tickets
@@ -298,7 +305,7 @@
 
     <script src="./dist/crypto.js" type="module"></script>
 
-    <script src="./js/counter.js"></script>
+    <script type="module" src="./js/counter.js"></script>
 </body>
 
 </html>

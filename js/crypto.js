@@ -172,6 +172,10 @@ const personalArea = async () => {
   refBalanceNode.textContent = `${refBalanceParsed} BNB`;
   refCountNode.textContent = `${countOfReferrals}`;
   const userInfo = await readContract.UserInfo(userAddress);
+  const lotterysAmountEl = document.querySelector("#lotterysAmount");
+  if (lotterysAmountEl) {
+    lotterysAmountEl.innerHTML = userInfo.LotteriesAmount || 0;
+  }
   const balance = ethers.utils.formatEther(userInfo.balance);
   winBalanceNode.textContent = `${balance} BNB`;
   winnedWithdrawBtn.addEventListener("click", () => {
