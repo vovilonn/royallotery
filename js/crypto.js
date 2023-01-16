@@ -150,7 +150,7 @@ const personalArea = async () => {
   }
 
   const winBalanceNode = document.querySelector(
-    ".winned-ballance",
+    ".winned-user-ballance",
   );
   const refBalanceNode = document.querySelector(
     ".ref-received__right--balance",
@@ -169,7 +169,7 @@ const personalArea = async () => {
   const referrals = await readContract.checkRefferals(userAddress);
   const countOfReferrals =
     referrals[0].length + referrals[1].length + referrals[2].length;
-  refBalanceNode.textContent = `${refBalanceParsed} BNB`;
+  refBalanceNode.textContent = `${Number(refBalanceParsed).toFixed(2)} BNB`;
   refCountNode.textContent = `${countOfReferrals}`;
   const userInfo = await readContract.UserInfo(userAddress);
   const lotterysAmountEl = document.querySelector("#lotterysAmount");
@@ -177,7 +177,8 @@ const personalArea = async () => {
     lotterysAmountEl.innerHTML = userInfo.LotteriesAmount || 0;
   }
   const balance = ethers.utils.formatEther(userInfo.balance);
-  winBalanceNode.textContent = `${balance} BNB`;
+
+  winBalanceNode.textContent = `${Number(balance).toFixed(6)} BNB`;
   winnedWithdrawBtn.addEventListener("click", () => {
     try {
       winnedWithdrawBtn.disabled = true;
@@ -211,7 +212,7 @@ const personalArea = async () => {
       const activeLottery = await readContract.checkActiveLottery();
       const price = await readContract.ticketPrice();
       const ticketsAmount = document.querySelector('#ticketsCounter').value;
-      if (ticketsAmount > 0) {
+      if (ticketsAmount > 0 && activeLottery[0]) {
         await performOperation('buyTickets', ticketsAmount, activeLottery[0], {value: price.mul(ticketsAmount)});
         alert('Ticket(s) will be added to list when transaction succed');
       }
@@ -265,7 +266,7 @@ const connectMetamask = async (prevAccount) => {
             },
           ],
         };
-        connector.sendCustomRequest(customRequest);
+        await connector.sendCustomRequest(customRequest);
       } catch (e) {
         if (e.message !== 'User rejected the request.') {
           const customRequest = {
@@ -278,26 +279,29 @@ const connectMetamask = async (prevAccount) => {
         }
       }
     } else if (ethereum) {
+      let _provider;
       try {
-        await window.ethereum.request({
+        _provider = await (window.ethereum).providers.find((provider) => provider.isMetaMask);
+
+        await _provider.request({
           method: "wallet_switchEthereumChain",
           params: [{chainId: addChainParams.params[0].chainId}],
         });
       } catch (err) {
         if (err.message !== 'User rejected the request.') {
-          ethereum.request(addChainParams);
+          _provider.request(addChainParams);
         } else {
           throw err;
         }
       }
       isMetaMask = true;
-
+      const accounts = await _provider.request({
+        method: "eth_requestAccounts",
+      });
+      const [currentAddress] = accounts;
+      userAddress = currentAddress;
     }
-    const accounts = await ethereum.request({
-      method: "eth_requestAccounts",
-    });
-    const [currentAddress] = accounts;
-    userAddress = currentAddress;
+
     const query = new URLSearchParams(window.location.search);
 
     connectButton.disabled = false;
