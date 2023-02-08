@@ -143,7 +143,7 @@ export const Enlocales = {
             1: "The prize pool is derived from the tickets sold by the following principle:",
             2: "50% of the revenue from one ticket is added to the prize pool of the next draw.",
             3: "20% is delivered to the Jackpot prize pool.",
-            4: "20% go to support the team and the project.",
+            4: "20% go to the ecosystem support fund.",
             5: "10% provide a lottery referral program.",
         },
         question5: "Drawing",
